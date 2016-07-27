@@ -1,0 +1,255 @@
+#kindnessView {
+  position: absolute;
+  width: 100%;
+}
+
+/*
+* LINKS
+*/
+.kindnessCal,.kindessShowMore {
+  position: absolute;
+  z-index: 5;
+  right: 0px;
+}
+
+.kindnessShowMore {
+   top: 0px;
+}
+
+
+.kindnessCal{
+  bottom: 0px;
+  right: 0px;
+}
+
+.kindnessCal .menuItem{
+  width: 75px;
+}
+
+#sonnyIcon{
+  opacity: 0;
+}
+
+.jiggleLink{
+    animation-name: jiggleLink;
+    animation-duration: .5s;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: jiggleLink;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 3;
+    -webkit-animation-fill-mode: forwards;
+    pointer-events: none;
+}
+
+@keyframes jiggleLink {
+    0%   {margin-top: 10px; opacity: 0;}
+    25%  {margin-top: 0px; opacity: 0.6;}
+    50%  {margin-top: 20px; opacity: 0.6;}
+    100% {margin-top: 10px; opacity: 0.3;}
+}
+
+@media (max-width: 321px) {
+  .kindnessCal{
+    bottom: -2.5px;
+    right: -2.5px;
+  }
+}
+/* links */
+
+/* KINDNESS SCREEN */
+
+
+#kindness h1{
+  font-size: 42px;
+  margin:0px;
+  padding:0px;
+
+   
+}
+
+#kindness .input{
+  margin:0px;
+  font-size: 30px;
+  background: rgba(256,256,256,0.7);
+  padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+}
+
+
+/* kindness screen */
+
+/* PAGE LAYOUT */
+.sky{
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+  height: 50vh;
+  width:100%;
+
+}
+
+.sea{
+  width: 100%;
+  display: block;  
+  position: absolute;
+  bottom: 0px;
+  z-index: 0;
+  height: 100%;
+  top: 100%;
+  margin-top: -120px;
+  padding-bottom: 120px;
+}
+
+
+.beach-bottom,.beach-top{
+  z-index: 3;
+  position: absolute;
+  fill: #fffad2;
+  
+   transition: fill 1s ease;
+}
+
+.beach-rect{
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  display: block; 
+  background: #fffad2;
+  position: absolute;
+  z-index: 3;
+  top: 210px;
+  bottom: 75px;
+}
+
+
+.beach-top{
+  top: 180px; 
+}
+
+.beach-bottom{
+  bottom: 75px; 
+}
+
+.furniture{
+  position: absolute; 
+  width: 200px; 
+  left: 10px; 
+  z-index: 4; 
+  bottom: 17.5vh;
+  opacity: 0.8;
+}
+
+/*
+BIRDS
+*/
+#birdContainer{
+position: absolute;
+top: 50px;
+left: -350px;
+z-index: 1;
+-webkit-transition: left 40s; /* Safari */
+transition: left 40s;
+transition-timing-function: linear;
+-webkit-transition-timing-function: linear;
+}
+
+#bird1{
+  width: 70px;
+  left: 150px;
+  top: 50px;
+  position: absolute;
+}
+
+#bird2{
+  width: 80px;
+  left: 250px;
+  position: absolute;
+}
+/*birds*/
+
+/* iNPUTS */
+#kindnessView #input{
+  text-align: left;
+}
+/* inputs */
+
+
+/* page layout */
+
+/* THEME BUTTONS */
+#themeChange{
+  display: none;
+}
+
+.summer{
+    background: #fffad2;
+}
+
+.winter{
+    background: #fff;
+}
+
+.autumn{
+  background: #F1E7C3;
+}
+/*theme buttons*/
+
+
+
+/* SUMMER THEME */
+.summer .sky{
+  background: #b0ddd6;
+}
+
+
+
+.beach-bottom,.beach-top{
+  fill: #fffad2;
+}
+
+
+.summer .sea{
+  background: #b6e5ed;
+}
+
+
+/* WINTER THEME */
+.winter .sky{
+  background: #EAF7FF;
+}
+
+.winter .beach-bottom g,.winter .beach-top g{
+  fill: #FFFFFF;
+}
+
+.winter .beach-rect{
+  background: #FFFFFF;
+}
+
+.winter .sea{
+  background: #D6EDED;
+}
+
+/* AUTUMN THEME */
+.autumn .sky{
+  background: #FFC98D
+}
+
+.autumn .beach path, .autumn .beach rect {
+  fill: #F1E7C3;
+}
+
+.autumn .sea{
+  background: #F6805C
+}
+/*  theme end */
+
+
+
+
+.selected{
+  background: rgba(0,0,0,0.1);
+}

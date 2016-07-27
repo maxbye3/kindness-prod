@@ -1,0 +1,145 @@
+#mrMoonhead .menuItem,.settings .menuItem {
+    float: right;
+    margin: 10px;
+    margin-left: 0px;
+    width: 100px;
+    border: solid white 1px;
+    height: auto;
+    width: 50px;
+    text-align: center;
+    padding-top: 5px;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1000;
+    right: 5px;
+    color: white;
+}
+
+.topBG,.settings,#mrMoonhead{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #6c334e;
+    position: absolute;
+    z-index: 50;
+}
+
+#mrMoonhead{
+    display: none;
+    background: #6c334e; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#003366,#6c334e); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#003366,#6c334e); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#003366,#6c334e); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#003366,#6c334e); /* Standard syntax */
+
+}
+
+#mrMoonhead,#settingsView{
+    display: none;
+    -webkit-animation: settingsIntro 1s; /* Chrome, Safari, Opera */
+    animation: settingsIntro 1s;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes settingsIntro {
+    from {
+      display: block;  
+      opacity:0;  
+      left: 300px;
+    }
+    to {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+}
+
+@keyframes settingsOutro {
+    from {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+    to {
+      display: block;  
+      opacity:0;  
+      left: 300px;
+    }
+}
+
+#mrMoonhead .container,.settings .container{
+    position: absolute;
+    color: white;
+    z-index: 600;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#mrMoonhead .container h1,.settings .container h1{
+    font-family: LoveYaLikeASister;  
+    padding: 5px;
+    border: solid rgba(256,256,256,0) 2px; 
+    -webkit-transition: border 4s; /* Safari */
+    transition: border 4s;
+}
+
+#mrMoonhead .container p,.settings .container p{
+     padding-left: 5px;
+     font-size: 5vw;
+     padding-top: 40px;
+     width: 100%;
+}
+
+.settings .container .switchNow{
+    border: white solid 2px;
+    padding: 10px;
+}
+/* settings container */
+
+.topBG{
+    height: 80%;
+    background: #6c334e; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#003366,#6c334e); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#003366,#6c334e); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#003366,#6c334e); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#003366,#6c334e); /* Standard syntax */
+}
+
+.moon-logo{
+    position: absolute;
+    bottom: 0px;
+    left: 5%;
+    height: 18%;
+    margin-top: -50px;
+    padding-bottom: 20px;
+}
+
+.titleContainer{
+    position: absolute;
+    bottom: 0px;
+    right: 15%;
+    height: 18%;
+    float: right;
+    padding-bottom: 20px;
+}
+
+.titleContainer h3{
+     color: white;
+     font-size: 5vw;
+     margin:0px;
+     margin-bottom: 10px;
+     font-weight: normal;
+}
+
+.titleContainer .btn{
+    border: solid;
+    padding: 5px; 
+}
+
+.changeTheme{
+    border: white solid 2px; padding: 10px;
+}

@@ -1,0 +1,66 @@
+
+
+
+<!-- MR. MOONHEAD -->
+<div id="mrMoonhead">
+
+  <!-- close button -->
+  <div class="menuItem" id="seeMore" (click)="moonhead_back()">
+    <a>
+      <img src="./img/icons/back-arrow.png">
+      <p>BACK</p>
+    </a>
+  </div>
+  <!--close button-->
+
+<div class="container">
+    <div style="width: 280px;">    
+        <h1 id="settingsH1">Mr. Moonhead</h1> 
+    </div> 
+        <center>
+        <div style="width: 50vw;">
+          <img width="200px" src="./img/settings/moonhead_logo.png">
+          <p>Moonguy is a physicist turned web developer interested in psychology and gaming</p>
+          <a href="http://mrmoonhead.com/" target="_blank"><p style="color: white; font-weight: bold; text-decoration: none; border: white solid 2px; padding: 5px;">Check out the rest of his work</p></a>
+        </div>
+        </center>
+   </div>
+</div>   
+<!--mr. moonhead-->
+
+<div class="settings" id="settingsView">
+  <!-- close button -->
+  <div class="menuItem" id="seeMore" (click)="back()">
+    <a>
+      <img src="./img/icons/back-arrow.png">
+      <p>BACK</p>
+    </a>
+  </div>
+  <!--close button-->
+    <div class="topBG"></div>
+    <div class="container">
+    <div style="width: 180px;">    
+        <h1 id="settingsH1">Settings</h1> 
+    </div> 
+
+        <p id="whoKind"> <img src="./img/icons/heart.png" width="4.5%"> Who / <img src="./img/icons/messenger.png" width="4.5%"> Kindness 
+        <span style="border: white solid 2px; padding: 10px;" onclick="switchNow('whoKind')">switch</span></p>
+
+        <p (click)="themeView()"><span class="changeTheme">
+            Change Theme (Current Theme: 
+            <span id="themeSelected">Summer</span>)
+         </span></p>
+        
+
+    <img class="moon-logo" src="./img/settings/moonhead_logo.png">
+    <div class="titleContainer">
+    <h3>This app was made by Mr. Moonhead</h3>
+    <h3 class="btn" (click)="mrMoonhead()"><center>what's a moonhead</center></h3>
+    <h3 class="btn" (click)="questionTime()"><center>I got a question</center></h3>
+   
+   </div>
+   
+</div>
+   
+
+

@@ -1,0 +1,202 @@
+#backKindness{
+    margin: 10px;
+    width: 100px;
+    border: solid black 1px;
+    height: auto;
+    width: 50px;
+    float: left;
+    text-align: center;
+    padding-top: 5px;
+    text-transform: uppercase;
+    margin-top: 130px;
+        position: absolute;
+    z-index: 3;
+}
+
+
+.calView{
+    position: absolute;
+    bottom: 0px;
+    height: 100vh;
+    width: 100%;
+    left: 0px;
+}
+
+.menuItem{
+    float: left;
+    margin-left: 15px;
+}
+
+
+/*  CALY CHARACTER */
+.calyDiv{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10;
+}
+
+.calyDiv img{
+
+    position: fixed;
+    bottom: 0px;
+    
+    opacity: 0;
+   -webkit-transition: right 2s, opacity 2s; /* Safari */
+    transition: right 2s, opacity 2s;
+    height: 12vh;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.flipCaly{
+    -moz-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    filter: none;
+    -ms-filter: none;
+}
+
+
+
+/* SPEECH BUBBLE */
+.speechDiv{
+    position: absolute;
+    right: 5%;
+    bottom: 4vh;
+    max-width: 58%;
+}
+
+
+
+
+#calBubble{
+    opacity: 0;
+    padding: 7.5px;
+    z-index: 3;
+    font-size: 6vw;
+    min-height: 30px;
+    -webkit-transition: width 0.7s, opacity 0.7s;
+    transition: width 0.7s , opacity 0.7s;
+}
+
+.triangle-border.right {
+    right: 100px;
+
+    -webkit-animation-name: speechBorder;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 1;
+
+    animation-name: speechBorder;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-delay: .5s;    
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    border: solid #c8523b;    
+    border-width: 0px;
+}
+
+.triangle-border {
+    position: relative; 
+    color: #333;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+@keyframes speechBorder {
+    from {border-width: 0px;}
+    to {border-width: 5px;}
+}
+
+.triangle-border:before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 40px;
+    border-style: solid;
+    display: block;
+    width: 0;
+}
+
+.triangle-border.right:before {
+    bottom: 5px;
+    right: -30px;
+    
+    -webkit-animation-name: speechTriangle;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: .5s;
+
+    animation-name: speechTriangle;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-delay: .5s;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    border-width: 0;
+    border-color: transparent #c8523b;
+}
+
+@keyframes speechTriangle {
+    from {border-width: 5px 0px 5px 0px;}
+    to {border-width: 15px 0px 15px 30px;}
+}
+
+.triangle-border.right:after {
+    bottom: 5px;
+    right: -18px;
+    border-width: 9px 0px 9px 21px;
+    border-color: transparent #fff;
+}
+.triangle-border:after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    right: 50px;
+
+    border-style: solid;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+}
+/* speech bubble end */
+
+
+#calyCall{
+    display: none;
+    margin-top: 0px;
+}
+
+#calyCall img{
+   margin-right: 0px;
+   opacity: 1;
+   width: 55px;
+   height: 45px;
+}
+
+#calyCall {
+    margin: 10px;
+}
+
+#calyCall a img{
+    position: initial;
+    margin-right: 10px;
+}
