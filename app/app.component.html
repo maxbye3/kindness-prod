@@ -3,3 +3,129 @@
 </h1>
 
 <p> this has been added </p>
+
+
+<!--<settings-component></settings-component>-->
+
+<div class="kindessShowMore">
+  <!--more button-->
+  <div class="menuItem" id="seeMore" (click)="settings()">
+    <a>
+      <img src="./img/icons/more.png">
+      <p>More</p>
+    </a>
+  </div>
+
+  <!--show button-->
+  <div class="menuItem" id="sonnyIcon">
+    <a>
+      <img src="./img/icons/sonny.png">
+      <p id="sonnyState">CALL</p>
+    </a>
+  </div>
+
+</div>
+
+<!--<go-cal></go-cal>
+<weather></weather>
+<sonny></sonny>-->
+
+<div id="birdContainer">
+  <img id="bird1" src="./img/scenes/bird.gif">
+  <img id="bird2" src="./img/scenes/bird.gif">
+</div>
+
+
+<!--Content-->
+<div class="centerContent">
+
+  <center>
+
+    <div id="kindnessView">
+      <form action="" id="kindness" style="width: 80%">
+        <div id="input">
+          
+          <h1 id='whoText'> <img src="./img/icons/heart.png" width="40px"> For Who</h1>
+          <input class="input" type="text" id="inputPerson" placeholder="Who did you do a kindness for?">
+
+          <h1 id='kindnessText'> <img src="./img/icons/messenger.png" width="40px"> Kindness</h1>
+          <input class="input" type="text" id="inputKindness" placeholder="What was the kindness?">
+       
+        </div>
+
+        <div class="themeButton selected" (click)="kindessSubmit()">
+          SUBMIT
+        </div>
+        <div id="submitCheck" style="display:none"></div>
+
+      </form>
+    </div>
+    <!-- kindness view -->
+
+
+
+    <!--<sonny-speech></sonny-speech>-->
+
+
+    <!-- Theme Change -->
+    <div id='themeChange'>
+      <div class="themeButton summer" [class.selected]="selectedBackground == 'summer'" (click)="theme = 'summer'; selectButton('summer');">
+        summer
+      </div>
+
+      <div class="themeButton winter" [class.selected]="selectedBackground == 'winter'" (click)="theme = 'winter'; selectButton('winter');">
+        winter
+      </div>
+
+      <!--<div class="themeButton autumn" [class.selected]="selectedBackground == 'autumn'" (click)="theme = 'autumn'; selectButton('autumn');">
+        autumn
+      </div>-->
+
+
+      <div class="themeButton autumn" (click)="themeBack()">
+        back
+      </div>
+
+    </div>
+    <!--theme-change-->
+
+  </center>
+</div>
+<!--content end-->
+<img src="{{furnitureImg}}" class="furniture">
+
+<!-- Background -->
+<div [ngClass]="changeTheme()">
+
+  <div class="sky bg"></div>
+
+  <div class="beach-rect"></div>
+
+  <svg class="beach-top bg" viewBox="0 0 717 230">
+    <g id="Page-1" fill="#fffad2" fill-rule="evenodd">
+      <rect id="Rectangle-1" x="0" y="33" width="716" height="196.017332"></rect>
+      <path d="M0,15.625 C0,15.625 140.924547,23.976017 291.600892,10.163517 C442.277237,-3.648983 433.596176,11.0926514 480.257123,5.87519836 C520.249328,1.40341912 562.809873,2.19276048 591.529336,1.27363607 C681.071974,-1.5920451 716.239348,1.27363609 716.239348,1.27363609 L716.239348,44.4212547 L0,44.4212547 L0,15.625 L0,15.625 Z"
+        id="Path-1"></path>
+    </g>
+  </svg>
+
+  <svg class="beach-bottom bg" viewBox="0 0 700 211">
+    <g id="Page-1" fill="#fffad2" fill-rule="evenodd">
+      <path d="M0.00078204,193.668653 L0.00078204,205.33183 C0.00078204,205.33183 -0.614922758,207.473824 32.70578,209.148276 C66.0264828,210.822729 126.426304,208.838998 126.426304,208.838998 L192.548591,206.999034 L309.662021,206.380477 C309.662021,206.380477 378.206896,207.240657 403.338279,206.286244 C428.469661,205.33183 400.440822,206.463837 438.638911,204.889658 C476.837001,203.31548 514.689002,208.838998 532.886611,205.33183 C551.08422,201.824662 545.313464,205.33183 573.543507,201.705058 C601.77355,198.078286 617.790025,204.756765 640.293575,201.705058 C662.797125,198.653351 658.909681,200.598421 680.926298,199.308151 C702.942915,198.01788 708.255988,201.301538 714.214838,201.705058 C718.769985,202.013522 714.214838,192.371134 714.214838,192.371134 L0.00078204,193.668653 L0.00078204,193.668653 Z"
+        id="Path-2"></path>
+      <rect id="Rectangle-1" x="0" y="0.0651424948" width="716" height="196.017332"></rect>
+    </g>
+  </svg>
+
+  <div id='sea' class="sea bg">
+    
+
+
+
+
+    <!--<cal-view></cal-view>-->
+    </div>
+
+   
+
+</div>
