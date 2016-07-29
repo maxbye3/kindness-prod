@@ -35,6 +35,9 @@
 
 #sonnyIcon{
   opacity: 0;
+      left: 10px;
+    z-index: 100;
+    position: absolute;
 }
 
 .jiggleLink{
