@@ -29,6 +29,12 @@ import { CompassionFlow } from './compassion/flow.component';
 import { CompassionData } from './compassion/data.component';
 import { SwiperComponent } from './generator/swiper.component';
 import { AlternativeKindness } from './alternativeHome/alternateKindnessView.component';
+import { settingsTransition } from './settings/settings.transition.directive';
+import { themeTransition } from './settings/theme/theme.transition.directive';
+import { calanderTransition } from './calander/calander.transition.directive';
+import { suggestionsTransition } from './generator/suggestions.transition.directive';
+import { finishedTransition } from './finishedKindness/finished.transition.directive';
+import { ManagerDirective } from './state/manager.directive';
 
 
 
@@ -88,7 +94,8 @@ declare var jQuery: any;
     CalComponent,
     TourComponent, 
     CompassionFlow,
-    EditComponent
+    EditComponent,
+    ManagerDirective
   ]
 })
 
