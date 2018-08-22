@@ -1,0 +1,20 @@
+<div class='nameEmail'>
+    <h1> 
+        This is embarrassing. The President of Kindness has forgotten your name. Mind reminding us?
+    </h1>
+
+    <input (click)='scrollUp("nameEntered")' class="inputName" type="text" placeholder="please enter your name. . . " >
+    <div class="nameInput themeButton selected" (click)='inputNameEmail("name")'>
+        continue
+    </div>
+    
+    <input (click)='scrollUp("emailEntered")' class="inputEmail" type="text" placeholder="please enter your email. . . ">
+    <div class="emailInput themeButton selected" (click)='inputNameEmail("email")' onclick="writeUserData( $('.inputEmail').val(), jQuery('.letterTxt .name').attr('name')) ">
+        email entered
+    </div>
+    
+    <div class="returnBtn themeButton selected" (click)='returnKindness()'>
+        
+    </div>
+    
+</div>

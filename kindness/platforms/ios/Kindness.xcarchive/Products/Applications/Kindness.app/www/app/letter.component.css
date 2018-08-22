@@ -1,0 +1,121 @@
+    
+.letter{
+    position: absolute;
+    width: 100vw;
+    z-index: 100;
+    height: 100vh;
+    background: #f3f0db;
+    display: none;
+    /*-webkit-animation: letterIntro 1s;
+    animation: letterIntro 1s;*/
+}
+
+.letterTxt{
+    display: none;
+    position: absolute;
+    font-size: 8vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+}
+
+.stamp{
+    display: none;
+    position: absolute;
+    opacity: 0.2;
+    width: 46vw;
+    right: 20px;
+    transform: rotate(20deg);
+}
+
+.topLine{
+    margin-top: 6.4vw;
+}
+
+.line{
+    width: 100vw;
+    border-bottom: rgba(0,0,0,.2) solid 1px;
+    height: 8vw;
+    opacity:0;  
+    /*left: 300px;*/
+}
+
+.return, .twitter, .facebook, .instagram{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: solid black 1px;
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 2px;
+    z-index: 101;
+}
+
+.return img{
+    filter: invert(100%);
+}
+
+.instagram{
+    right: 58px;
+}
+
+.twitter{
+    /*right: 102px;*/
+    right: 58px;
+}
+
+.facebook{
+    /*right: 146px;*/
+    right: 102px;
+}
+
+@keyframes lineIntro {
+    from {
+      opacity:0;  
+      margin-left: 100vw;
+    }
+    to {
+      opacity:1;  
+      margin-left: 0vw;
+    }
+}
+
+@keyframes letterIntro {
+    from {
+      display: block;  
+      opacity:0;  
+      left: 300px;
+    }
+    to {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+}
+
+
+
+@keyframes letterIntro {
+    from {
+      display: block;  
+      opacity:0;  
+      left: 300px;
+    }
+    to {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+}
+
+@keyframes letterOutro {
+    from {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+    to {
+      display: none;  
+      opacity:0;  
+      left: 300px;
+    }
+}

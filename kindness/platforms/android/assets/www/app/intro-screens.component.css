@@ -1,0 +1,117 @@
+.topMargin{
+    margin-top: 10%;
+}
+
+.iosFix{
+  z-index: 100; 
+  position: absolute; 
+  background: #4caf50;
+  top: 0px; 
+  width: 3000px; 
+  height: 3000px; 
+  display: block;
+}
+
+.welcomeBg{
+    left: -50%;
+    width: 250px;
+    height: 250px;
+    margin-top: 0vw;    
+    transition: background 2s;
+}
+
+
+#introScreen{
+    position: relative; 
+    /*box-shadow: 0 0 0 99999px #b6e5ed;
+    -webkit-box-shadow: 0 0 0 200vw #b6e5ed;*/
+    /*-moz-box-shadow: 0 0 0 99999px #b6e5ed;*/
+    box-shadow: 0 0 0 150px #4caf50;
+    -webkit-box-shadow: 0 0 0 150px #4caf50;
+    -moz-box-shadow: 0 0 0 150px #4caf50;
+
+    text-align: -webkit-center;
+    border-radius: 100vh;
+    transition: box-shadow 2s;
+}
+
+.charBg{
+    top: 0px;
+    display: block;
+    position: absolute;
+    z-index: -2;
+    background: #4caf50;
+    background: -webkit-linear-gradient(#b0ddd6,#b0ddd6, #fffad2);
+    background: -o-linear-gradient(#b0ddd6,#b0ddd6, #fffad2);
+    background: -moz-linear-gradient(#b0ddd6,#b0ddd6, #fffad2);
+    background: linear-gradient(#b0ddd6,#b0ddd6, #fffad2);
+}
+
+#charContainer{
+  transition: background 2s; 
+}
+
+.container{
+    position: absolute; left: 50%; z-index: 1000;
+}
+
+#sonnyIntro,#otherChars{
+    position: relative;
+    z-index: -1;
+    position: absolute;
+    left: -90%;
+    top: 1vw;
+    transition: margin-left 2s,margin-top 2s;
+}
+
+.textContainer{
+    font-family: BebasNeue; 
+    color: white;
+    position: absolute;
+    margin-top: 20px;
+    font-size: 30px;
+    width: 100%;
+    left: -50%;
+    text-align: center;
+}
+
+.btn,.btn2,.btn3{
+    border: white solid 1px;
+    padding: 5px;
+    margin-top: 2vh;
+    color: white;
+}
+
+.skipContainer{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 100000;
+    color: white;
+    border-radius: 500px;
+    border: white solid 2px;
+    padding: 13px;
+    font-size: 30px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.25);
+}
+
+@media (max-width : 320px) 
+{
+    .textContainer{
+        font-size: 25px;
+    }
+}
+
+@media (min-width : 768px) 
+{
+    .topMargin{
+        margin-top: 25%;
+    } 
+
+    .textContainer{
+    width: 150%;
+    left: -75%;
+    }
+}
+

@@ -1,0 +1,87 @@
+/* CUP SPARKLES */
+#star12 {
+ background: white;
+ opacity: .5;
+ width: 0px;
+ height: 0px;
+ position: absolute;
+ -webkit-animation:spin 2s linear,starsAppear 4s linear;
+ -moz-animation:spin 2s linear,starsAppear 4s linear;
+ animation:spin 2s linear,starsAppear 4s linear;
+ top: 40px;
+ margin-top: 40px;
+ margin-left: 10px;
+ opacity: 1;
+}
+ 
+@-moz-keyframes starsAppear { 
+  80% { 
+   opacity: .5;    
+  }
+  100% { 
+   width: 40px;
+   height: 40px;
+   margin-top: 0px;
+   opacity: 0;
+} }
+@-webkit-keyframes starsAppear { 
+   80% { 
+   opacity: .5;    
+   }
+   100% { 
+   width: 40px;
+   height: 40px;
+   margin-top: 0px; 
+   opacity: 0;
+} }
+@keyframes starsAppear { 
+   80% { 
+   opacity: .5;    
+   } 
+   100% { 
+   width: 40px;
+   height: 40px;
+   margin-top: 0px;
+   opacity: 0;    
+ } }
+ 
+
+@-moz-keyframes spin { 100% { 
+    -moz-transform: rotate(360deg);
+} }
+@-webkit-keyframes spin { 100% { 
+    -webkit-transform: rotate(360deg); 
+ 
+} }
+@keyframes spin { 100% { 
+    -webkit-transform: rotate(360deg); transform:rotate(360deg); 
+ 
+ } }
+
+
+#star12:before, #star12:after {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 0px;
+ width: 0px;
+ background: white;
+ opacity: 1;
+ -webkit-animation:starsAppear 4s linear;
+ -moz-animation:starsAppear 4s linear;
+  animation:starsAppear 4s linear;
+}
+#star12:before {
+ -webkit-transform: rotate(30deg);
+ -moz-transform: rotate(30deg);
+ -ms-transform: rotate(30deg);
+ -o-transform: rotate(30deg);
+}
+#star12:after {
+ -webkit-transform: rotate(60deg);
+ -moz-transform: rotate(60deg);
+ -ms-transform: rotate(60deg);
+ -o-transform: rotate(60deg);
+}
+/* cup sparkles */

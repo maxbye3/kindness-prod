@@ -1,0 +1,330 @@
+#mrMoonhead .settingsMenuItem,.settings .settingsMenuItem {
+    float: right;
+    margin: 10px;
+    margin-left: 0px;
+    width: 100px;
+    border: solid white 1px;
+    height: auto;
+    width: 50px;
+    text-align: center;
+    padding-top: 5px;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1000;
+    right: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.topBG,.settings,#mrMoonhead{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #6c334e;
+    position: absolute;
+    z-index: 50;
+}
+
+#mrMoonhead{
+    display: none;
+    background: #6c334e; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#26d9a2,#26d9a2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#26d9a2,#003366); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#26d9a2,#003366); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#26d9a2,#003366); /* Standard syntax */
+
+}
+
+#settingsView{
+    display: none;
+    -webkit-animation: settingsIntro 1s; /* Chrome, Safari, Opera */
+    animation: settingsIntro 1s;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes settingsIntro {
+    from {
+      display: block;  
+      opacity:0;  
+      left: 300px;
+    }
+    to {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+}
+
+@keyframes settingsOutro {
+    from {
+      display: block;  
+      opacity:1;  
+      left: 0px;
+    }
+    to {
+      display: block;  
+      opacity:0;  
+      left: 300px;
+    }
+}
+
+#mrMoonhead .container,.settings .container{
+    position: absolute;
+    color: white;
+    z-index: 600;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#mrMoonhead .container h1,.settings .container h1{
+    font-family: LoveYaLikeASister;  
+    padding: 5px;
+    border: solid rgba(256,256,256,0) 2px; 
+    -webkit-transition: border 4s; /* Safari */
+    transition: border 4s;
+}
+
+#mrMoonhead .container p,.settings .container p{
+     padding-left: 5px;
+     font-size: 6vw;
+     padding-top: 2vh;
+     font-weight: bold;
+     width: 100%;
+}
+
+/* iPad only */
+@media (min-width: 766px) {
+    #mrMoonhead .container p,.settings .container p{
+        padding-top: 0vh;
+    }
+}
+
+
+.settings .container .switchNow{
+    border: white solid 2px;
+    padding: 10px;
+}
+/* settings container */
+
+.topBG{
+    height: 75%;
+    background: #6c334e; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#003366,#6c334e); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#003366,#6c334e); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#003366,#6c334e); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#003366,#6c334e); /* Standard syntax */
+}
+
+.moon-logo{
+    width: 100px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.blurb{
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.moon-description p{
+    margin-bottom: 7px; 
+    color: white;   
+}
+
+.moon-description span{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+textarea{
+    font-size: 6vw; 
+    font-family: kindness; 
+    width: 100%;
+}
+
+.moon-description .settingsBox{
+    border: none;
+    text-decoration: underline;
+}
+
+@media ( max-height: 1300px ){ /* on mobile*/
+  .moon-logo{
+    width: 40px;
+    margin-top: 8px;
+    margin-bottom: 6px;
+  }
+  
+  .settingsH1{
+      display: none;
+      border: solid rgba(255,255,255,0) 2px;
+  }
+   
+  .moon-description span{
+    font-size: 5.5vw;
+}
+
+
+}
+
+@media ( max-height: 640px ){ /* tiny screens*/
+    .smallphoneRemove{
+        display: none;
+    }
+}
+
+.titleContainer{
+    position: absolute;
+    bottom: 0px;
+    height: auto;
+    float: right;
+    text-align: center;
+    width: 80vw;
+    color: white;
+}
+
+.titleContainer h3{
+     font-size: 40px;
+     margin:0px;
+     margin-bottom: 10px;
+}
+
+.titleContainer .btn{
+    border: solid;
+    padding: 5px; 
+}
+
+.narcissimTxt,.challengeTxt{
+  display: inline;
+  position: absolute;
+  margin-top: -50px;
+  left: 70px;
+}
+    
+.changeTheme,.settingsBox{
+    border: white solid 2px; 
+    padding: 10px;
+}
+
+
+/* RADIO BUTTON */
+.compassion-radio, .square-radio {
+    border: 1px solid white;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+}
+.compassion-radio--clicked .compassion-radio--content,
+.square-radio--clicked .square-radio--content{
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* background-color: white; */
+    width: 20px;
+    height: 20px;
+}
+/* radio button */
+
+.settingsMenuItem img{
+  filter: invert(100%);
+  width: 30px;  
+}
+
+.settingsMenuItem p {
+  margin: 3px;    
+}
+
+.suggestion{
+    float:left;
+    margin-top: 0px;
+}
+
+
+
+.createIntention,.changeIntention,.cancelIntention, .compassionFlow {
+    padding-left: 10px !important;
+    font-size: 5vw;
+    border: white solid 1px;
+    width: 25vw !important;
+    padding: 10px;
+    margin-bottom: 0px;
+    padding-top: 1vh !important;
+    margin-top: 0px;
+}
+
+.compassionFlow {
+    width: 82vw !important; 
+    margin-left: 5px;
+}
+
+.changeIntention, .cancelIntention, .or{
+    margin-left: 2vw;
+    margin-top: 0px !important;
+    padding-top: 1vh !important;
+}
+
+.createIntention{
+   margin-bottom: 2vh;
+}
+
+.cancelIntention {
+    width: 24vw !important;
+}
+
+.or{
+    width: 3vw !important;
+}
+
+.intentionSet p{
+    float:left;
+}
+
+.intentionTxt{
+    float: left;
+    font-size: 5vw;
+    margin-top: 15px;
+    font-size: 6vw;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.createIntention{
+    width: 33vw !important;
+    margin-left: 1.5vw;
+    float: left;
+    font-weight: normal;
+    text-align: center
+}
+
+ 
+/*.twitter, .instagram{
+    filter: invert(100%);
+    position: absolute;
+    right: 0px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    z-index: 601;
+    right: 142px;
+    top: 10px;
+}*/
+
+.twitter{
+  /*right: 75px;*/
+    /*background: #1DA1F2;*/
+    position: absolute;
+    bottom: 12px;
+    margin-left: 29px;
+    background: white;
+    border-radius: 20px;
+    padding: 1px;
+}
+

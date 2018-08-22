@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "920887689629",
+    "firebase_url": "https://kindness-app.firebaseio.com",
+    "project_id": "kindness-app",
+    "storage_bucket": "kindness-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920887689629:android:f18a6b50254ae0a8",
+        "android_client_info": {
+          "package_name": "com.maxbye.kindness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920887689629-ed9bb7r5gopulor3hhhrk0oemi19tkpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdH2DnE9VBBcS_wlv-T2gaBtOVvkjabPc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

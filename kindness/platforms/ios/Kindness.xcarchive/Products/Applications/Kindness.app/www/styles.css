@@ -1,0 +1,829 @@
+/* Master Styles */
+@font-face {
+  font-family: LoveYaLikeASister;
+  src: url("./font/LoveYaLikeASister.ttf"); 
+ }
+
+ @font-face {
+  font-family: BebasNeue;
+  src: url("./font/BebasNeue-webfont.ttf"); 
+ }
+
+
+@font-face {
+  font-family: Kindness;
+  src: url("./font/Kindness.ttf"); 
+ }
+
+ 
+@font-face {
+  font-family: Evil;
+  src: url("./font/old evils.ttf"); 
+ }
+
+app-root .loading{
+  font-family: LoveYaLikeASister;
+  color: white;
+  padding-top: 20vh;
+  font-size: 15vw;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: #b6e5ed;
+}
+
+body{
+  margin: 0;
+  font-family: Kindness;
+  overflow:hidden;
+}
+
+
+.flip{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.bg{
+    position: absolute;
+    transition: background 1s ease;
+}
+
+.centerContent{
+  position: absolute;
+  z-index: 8;
+  width: 100%;
+  top: 35%;
+}
+
+.themeButton{
+    z-index: 5;
+    width: 70%;
+    vertical-align: bottom;
+    margin-top: 20px;
+    font-family: Kindness;
+    font-size: 8vw;   
+}
+
+.evilTxt{
+  font-family:evil;
+  color:white;
+}
+
+@media (max-width: 450px) {
+.beach-bottom {
+  bottom: 12vh;
+  height: 20vh;
+}
+}
+
+
+@media (min-width: 350px) {
+  .themeButton{
+      font-size: 9vw;  
+  } 
+}
+
+@media (min-width: 420px) {
+  .themeButton{
+      font-size: 7vw;  
+  } 
+}
+
+
+@media (min-width: 500px) {
+  .themeButton{
+      font-size: 6.5vw;  
+  } 
+}
+
+
+
+@media (min-width: 620px) {
+  .themeButton{
+      font-size: 6.5vw;  
+  } 
+}
+
+
+
+@media (min-width: 750px) {
+  .themeButton{
+      font-size: 6.5vw;  
+  } 
+}
+
+@media (min-width: 1020px) {
+  .themeButton{
+      font-size: 8vw;  
+  } 
+  
+  .pretentiousTxt{
+    font-size: 6vw;
+  }
+}
+
+
+.selected{
+  color: rgb(0, 0, 0);
+  text-shadow: rgba(255, 255, 255, 1) 1px 1px;
+  letter-spacing: 1px;
+  transition: background 2s ease;
+  background: rgba(0,0,0,0.05);
+}
+
+
+.intro{
+  width: 100%;
+  animation: contentIntro 1s forwards;
+  -webkit-animation: contentIntro 1s forwards;
+   -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    animation-timing-function: linear;
+}
+
+.outro{
+  width: 100%;
+  animation: contentExit 1s forwards;
+  -webkit-animation: contentExit 1s forwards;
+   -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    animation-timing-function: linear;
+}
+
+@keyframes contentExit {
+    from {margin-left: 0%;}
+    to {margin-left: 100%;}
+}
+
+@keyframes contentIntro {
+    from {margin-left: -100%;}
+    to {margin-left: 0%;}
+}
+
+
+/* Shared between cal and kindness */
+.menuItem{
+    float: right;
+    margin: 10px;
+    margin-left: 0px;
+    width: 100px;
+    border: solid black 1px;
+    height: auto;
+    width: 50px;
+    text-align: center;
+    padding-top: 5px;
+    text-transform: uppercase;
+}
+
+
+.menuItem p{
+    margin: 0px;
+    margin-top: 2.5px;
+    font-size: 18px;
+    font-weight: 900;
+
+}
+.menuItem img{
+    height: 30px;
+}
+
+.kindnessCal .menuItem, .helpMenu .menuItem, .editMenu .menuItem {
+  width: 45vw;
+}
+
+.kindnessCal img{
+  height: auto;
+  width: 10vw;
+  margin-top: 5vw;
+}
+
+#backKindness img{
+    width: 2.5vw;
+    height: auto;
+}
+
+#backKindness p{
+    
+    font-size: 5vw;
+    float: right;
+    color: #000000;
+    text-shadow: 1px 1px #000;
+    letter-spacing: 2px;
+    font-weight: bold;
+    float: right;
+    padding-right: 1vw;
+    padding-top: 6px;
+	padding-left: 5px;
+
+}
+
+/* GO TO CAL */
+
+.goToCal p { 
+    font-size: 30px;
+    color: #000000;
+    letter-spacing: 2px;
+    font-weight: bold;
+    width: 90vw !important;
+    padding-bottom: 5px !important;
+    padding-left: 5vw ;
+    font-size: 5.5vw;
+}
+
+.goToCal img {
+  float: right;
+  margin-top: 1vh;
+  margin-bottom: 1px;
+}
+
+/* @media (max-width: 450px) {
+
+ 
+  .goToCal img {
+    font-size: 5vw;
+  }
+
+
+  .goToCal p{
+    font-size: 5vw;
+  }
+
+  } */
+
+/* go to cal */
+
+.compassionNum{
+    display: none;
+    position: absolute;    
+    margin-top: -3px;
+    font-family: Kindness;
+}
+
+.compassionDay{
+    display:none;
+    position: absolute;
+    font-size: 18px;
+    margin-top: -15px;
+}
+
+/*
+* WEATHER
+*/
+#tinsel{
+    display: block; 
+    width: 20px; 
+    height: 10px; 
+    position: absolute; 
+    z-index: 2;
+}
+
+#snow{
+    display: block; 
+    width: 20px; 
+    height: 20px; 
+    position: absolute; 
+    z-index: 1;
+}
+
+@keyframes rain1 {
+    0% {
+        top: 0px;
+         -ms-transform: rotate(10deg); /* IE 9 */
+        -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+        transform: rotate(10deg);
+        margin-left: 0px;
+    }
+    15%{
+        -ms-transform: rotate(-20deg); /* IE 9 */
+        -webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+        transform: rotate(-20deg);
+    }
+    25%{
+         -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+    75%{
+        -ms-transform: rotate(-90deg); /* IE 9 */
+        -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+        transform: rotate(-90deg);
+    }
+    90%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 250px;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        margin-left: -100px;
+    }
+}
+
+@keyframes rain2 {
+    0% {
+        top: 0px;
+         -ms-transform: rotate(-10deg); /* IE 9 */
+        -webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
+        transform: rotate(-10deg);
+        margin-left: 0px;
+    }
+    15%{
+        -ms-transform: rotate(10deg); /* IE 9 */
+        -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+        transform: rotate(10deg);
+    }
+    25%{
+         -ms-transform: rotate(-90deg); /* IE 9 */
+        -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+        transform: rotate(-90deg);
+        margin-left: -20px;
+    }
+    75%{
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+    90%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 250px;
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+        transform: rotate(0deg);
+        margin-left: 100px;
+    }
+}
+
+/*weather end*/
+/* ACHIEVEMENT SQUARES */
+
+/*
+* WINTER HOUSE
+*/
+#winterHouse{
+    position: absolute;
+    z-index: 1;
+    left: 50px;
+    bottom: 50px;
+}
+
+#winterHouse .house{
+        width: 250px;
+        bottom: 0px;
+}
+
+#winterHouse .smoke{
+    width: 100px;
+    margin-top: -309px;
+    margin-left: 110px;
+    position: absolute;
+}
+
+/*winter house*/
+/* 
+BOAT 
+*/
+#boatContainer{
+    position: absolute;
+    z-index: 1;
+}
+
+#boatContainer img{
+  width: 200px;
+}
+
+
+/*boat*/
+
+
+/* task-view */
+ 
+ /* hide scroll bar */
+ ::-webkit-scrollbar { 
+    display: none; 
+}
+ 
+#task-view{    
+    z-index: 2;
+    top: 55px;
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 84%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+#weekView .more, #task-view .square, #task-view .more {
+    height: auto;
+    background: #FFFAD2;
+    margin-top: 2vh;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+#weekView .more{
+    width: 95%;
+    margin-top: -20px;
+    opacity: .9;
+   font-size: 4vw;
+}
+
+#weekView a, #task-view a{
+    pointer-events: none;    
+}
+
+.resetTxt{
+    padding-top: 5px;
+}
+
+.resetBtn{
+    text-align: center;
+    border-top: black solid 1px;
+    margin-top: 7px !important;
+    padding-top: 5px;
+}
+
+#weekView h3, #weekView p{
+    margin: 0px;
+}
+
+#task-view .square h3{
+    padding-top: 5px;
+    margin-bottom: 10px;
+    font-size: 7vw;
+    font-weight: normal;
+}
+
+#task-view .square p, #task-view .more p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 6.5vw;
+}
+
+#task-view .more .date, #task-view .more .kindness {
+   float: left;
+}
+
+#task-view .editContainer{
+    border: solid 1px black;
+    margin-top: 15px;
+    font-size: 4vw;
+    padding-top: 2px;
+    padding-top: 2px;
+}
+#task-view p{
+    font-size: 30px;
+}
+    
+
+#task-view .editContainer img{
+    width: 15px;
+    margin-right: 15px;
+}
+
+
+/* task-view end */
+
+/* week-view */
+#weekView{
+    z-index: 2;
+    display: none;
+    top: 80px;
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+#weekView .square {
+    margin-bottom: 3vh;
+    background: #FFFAD2;
+    text-align: left;
+    padding: 10px;
+    font-size: 6.5vw;
+}
+
+#weekView .encourageScreen{
+    text-align: center;
+}
+
+#weekView .editContainer{
+    margin-right: -5px;
+    border: 1px solid black;
+    width: auto;
+    float: right;
+    text-align: center;
+    padding: 2px 5px 0px 5px;
+    margin-left: 10px;
+    margin-top: -8px;
+}
+
+#weekView .editContainer img{
+    width: 15px;
+    vertical-align: 13px;
+    margin-bottom: 2px;
+}
+
+#weekView .editContainer p{
+    font-size: 5vw;
+    margin: 0px;
+    margin-top: -20px;
+}
+
+
+#weekView .more,#task-view .more{
+    padding: 5px;
+    display: none;
+}
+
+#weekView .more p,#task-view .more p{
+    text-align: left;
+    margin-bottom: 1vh;
+}
+
+#weekView .more p {
+    margin: 0px;
+    padding-left: 10px;
+}
+
+#weekView .more .kindness, #weekView .more .date {
+    float: left;
+}
+
+.edit a {
+    margin-left: 10px;
+}
+
+#weekView .more h6,#task-view .more h6{
+    border-bottom: black solid 1px;
+    padding: 5px;
+    text-align: center;
+    font-size: 6vw;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+#weekView input,#task-view input{
+    font-size: 5vw;
+    width: 98%;
+}
+
+@media (max-width: 600px) {
+    #weekView, #task-view {
+        left: 2.5%;
+        width: 95%;
+    }
+
+    #weekView .more {
+        padding-left: 0px;
+        width: 100%;
+    }
+
+
+    
+
+}
+
+.delete, .twitter, .facebook, .dontEdit {
+    display: none;
+}
+
+input[type=text],::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: Kindness;
+}
+input[type=text],::-moz-placeholder { /* Firefox 19+ */
+  font-family: Kindness;
+}
+input[type=text],:-ms-input-placeholder { /* IE 10+ */
+  font-family: Kindness;
+}
+input[type=text],:-moz-placeholder { /* Firefox 18- */
+  font-family: Kindness;
+}
+/*week-view end*/
+
+/* DATE PICKER */
+
+.ui-datepicker{
+    background: #fffad2;
+    font-size: 5vw;   
+}
+
+.ui-datepicker-next{
+    float: right;
+    margin-right: 5px;
+}
+
+.ui-datepicker-prev{
+    margin-left: 5px;
+}
+
+.ui-datepicker a{
+    text-decoration: none;
+}
+
+/* PRETENTIOUS THEME */
+.thorns{
+    z-index: 2;
+    position: absolute;
+    height: 100vh;
+    left: -10vw;
+}
+
+
+/*
+* HANDY CLASSES
+*/
+.flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}
+
+/*iPad only*/
+@media (min-width: 767px) {
+    #weekView .editContainer p {
+        font-size: 3vw;
+    }
+
+    #weekView .square {
+        font-size: 5vw;
+    }   
+
+    #backKindness{
+        width: auto !important;
+    }
+
+    #backKindness p {
+        margin-top : 0px;
+        padding-top: 0.2vh;
+    }
+
+}
+
+
+/* iPad only */
+/*@media (min-width: 766px) {
+    #backKindness{
+        width: 90vw !important;
+    }
+}*/
+
+ .moonImg{
+      margin-top: 100px;
+      width: 10vh;
+      max-width: 200px;
+  }
+
+  .questionContainer{
+      width: 95%;
+  }
+
+  /* COMPASSION BTN */
+  .compassionBtn{
+      width: 100%;
+  }
+
+  /* KINDNESS GENERATOR */
+  .editMenu {
+    width: auto;
+    padding: 5px;
+    font-size: 20px;
+  }
+
+  .menuItem{
+    margin-bottom: 5px;
+  }
+
+  .editMenu .menuItem, .helpMenu .menuItem{
+    padding-bottom: 9px;
+    margin-left: 9px;
+    width: 45vw;
+  }
+
+  .editMenu .menuItem{
+    padding-bottom: 2px;
+  }
+  
+  .editMenu .menuItem{
+    display: none;
+  }
+
+  .editMenu .menuItem a h1, .helpMenu .menuItem a h1 {
+    float: left;
+    margin-top: 5px;
+  }
+
+  
+  .editMenu .menuItem a .circle, .helpMenu .menuItem a .circle {
+    padding: 2px 10px 2px 10px;
+    border: black solid 1px;
+    border-radius: 200px;
+    margin: 5px;
+    margin-right: 10px;
+  }
+
+  .editMenu .menuItem a .circle{
+    border: none;
+  }
+
+  /* kindness generator */
+
+  /* GO TO ALTERNATIVE KINDNESS VIEW */
+
+  .orTxt{
+    letter-spacing: 2px;
+  }
+
+  .missionView #kindnessText {
+    font-family: BebasNeue;
+    font-weight: 100;
+  }
+
+  .missionView img{
+    /* vertical-align: middle; */
+  }
+
+  .intentionTask{
+    float: left;
+    text-align: left;
+    width: 75%;
+    background: rgba(255,255,255,0.7);
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  
+  .kindnessIntention{
+    width: 70%;
+    background: rgba(255,255,255,0.7);
+    float: none;
+    text-align: center;
+  }
+
+
+  .beach-rect{
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    display: block; 
+    background: #fffad2;
+    position: absolute;
+    z-index: 3;
+    top: 210px;
+    bottom: 75px;
+  }
+  
+  /* IF TABLET THEN INCREASE SQUARE SIZE */
+  @media ( max-height: 600px ){
+    .beach-rect {
+      height: 40vh;
+    }
+  }
+
+   /* IF TABLET THEN INCREASE SQUARE SIZE */
+   @media ( min-height: 1061px ){
+    .beach-rect {
+      height: 65vh;
+    }
+  }
+
+  
+  .verticalFlip{
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+  }
+
+  /* alternative kindness view */
+  
+  /* slider component */
+  .compassionSlider {
+    font-size: 4vw;
+  }
+  
+  .kindnessTxt{
+    font-weight: bold;
+  }

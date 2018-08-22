@@ -1,0 +1,122 @@
+
+
+
+<!-- MR. MOONHEAD -->
+<div id="mrMoonhead">
+  <div class="settingsMenuItem" id="seeMore" (click)="moonhead_back()">
+    <a>
+      <img src="./img/icons/back-arrow.png">
+      <p>BACK</p>
+    </a>
+  </div>
+
+<div class="container">
+    <div style="width: 280px;">    
+        <h1 class="settingsH1"></h1> 
+    </div> 
+        <center>
+          <img class="moonImg" src="./img/settings/moonhead_logo.png">
+        </center>
+        <div class='questionContainer'>
+          <center>
+          <p class='blurb'></p>     
+          </center>     
+          <textarea class='settingsTxt' (click)='inputNameEmail.scrollUp("settingsTxt")' placeholder rows="4"></textarea>
+          <center>
+            <p><span class="settingsBox" (click)="submit()"><a style='color:white'>Submit</a></span></p>        
+          </center>
+      </div>
+   </div>
+</div>   
+<!--mr. moonhead-->
+
+<div class="settings" id="settingsView">
+  
+<!-- instagram -->
+<!--<div class="instagram" onclick='instagramFollow()'>
+  <img src="./img/icons/instagram.svg" width="20px"><br>
+FOLLOW</div>-->
+
+  <!-- close button -->
+  <div class="settingsMenuItem" id="seeMore" (click)="returnHome()">
+    <a>
+      <img src="./img/icons/sonny.png">
+      <p>GO BACK</p>
+    </a>
+  </div>
+  <!--close button-->
+    <div class="topBG"></div>
+    <div class="container">
+    <div style="width: 115px;">    
+        <h1 id="settingsH1">More</h1> 
+    </div> 
+
+    <!-- SWITCH NOT NESSECARY AS NO WHO 
+    <p id="whoKind"> <img src="./img/icons/heart.png" width="4.5%"> Who / <img src="./img/icons/messenger.png" width="4.5%"> Kindness 
+    <span class="settingsBox" onclick="switchNow('whoKind')">switch order</span></p>
+    -->
+    
+      <!--<p (click)="themeView()">
+      <span class="changeTheme">
+        Change Theme         
+      </span>
+      &nbsp;&nbsp;(current theme: <span id="themeSelected">Summer</span>)
+    </p>
+    
+    <br>-->
+     
+      <!--class="themeButton pretentious" [class.selected]="selectedBackground == 'pretentious'" (click)=""-->
+    <div>  
+      
+        <div (click)="intCompassion()" class="compassion-radio compassion-radio--clicked">
+            <div class="compassion-radio--content"></div>
+        </div>
+        <p class="challengeTxt">Start compassion challenge</p>
+
+    <div (click)="togglePretentiousMode()" class="square-radio square-radio--clicked" [class.selected]="selectedBackground == 'pretentious'">
+        <div class="square-radio--content"></div>
+    </div>
+    <p class="narcissimTxt">Tired of being nice?</p>
+    </div> 
+
+    <!-- <div style='height: 12vw'>   
+        <p class="compassionFlow" (click)='intFlow()'>Flow of compassion <b>:</b> the three pronged approach </p>
+    </div> -->
+
+    
+    <p>I've found a <b (click)="questionTime('bug')"><u>bug</u></b> / 
+    have a <b (click)="questionTime('comment')"><u>comment</u></b>/
+    have a <b (click)="questionTime('question')"><u>question</u></b>.
+    
+    </p>
+    <span class='intentionTxt'>I want to </span>
+    <div class='intentionSet'>
+      <p (click)='goToIntention()' class='changeIntention'>Change Intention</p> 
+      <p class='or'>or</p> 
+      <p (click)='cancelIntention()' class='cancelIntention'>Cancel Intention</p>
+    </div>    
+    <p (click)='goToIntention()' class='createIntention'>Create An Intention</p>
+    
+    <p class='suggestion'>I want to <b (click)="questionTime('suggestion')"><u>suggest an intention.</u></b>
+    
+
+    
+    <!--
+      <p><span class="settingsBox">Repeat the tour</span></p>
+      <p><span class="settingsBox" (click)="goCommunity()">Join the conversation</span></p>
+    -->
+    <div class="titleContainer moon-description">               
+      <!-- <p><span class="settingsBox">COMING SOON</span></p> -->
+      <span>Mr Moonhead would love to hear your suggestions for improvements, check out <span><b (click)='goMoonhead()'><u>The Kindness Roadmap</u></b></span> to see what's in the pipeline.<br><br></span>
+      <div class="smallphoneRemove" onclick='twitterFollow()'>
+        <span>Otherwise, thank you so much for using the app!<br></span>
+        <img class='twitter' src="./img/icons/twitter.svg" width="20px">
+        <img class="moon-logo" src="./img/settings/moonhead_logo.png">
+        
+        <br>
+      </div>
+   </div>
+</div>
+   
+</div> 
+

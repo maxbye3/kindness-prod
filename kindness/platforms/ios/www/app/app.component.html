@@ -1,0 +1,294 @@
+<!-- test just for analytics -->
+<!-- <div style='position: fixed; background: #2dbe60; display: block; z-index: 2000; top: 0px; left: 0px; width: 100%'>
+<h2 style='margin: 0px;'> Page: <span class='GooglePageName'></span>.html</h2>
+</div>  -->
+<!-- test just for analytics -->
+
+<!-- Reset app test -->
+<!-- <button style='font-size:40px; position: absolute; z-index: 1000000' class='btn btn-info' (click)='timeService.dayCheck("kindnessView")'>HELLO</button> -->
+<!-- Reset app test -->
+
+
+<modal></modal>
+<letter-root></letter-root>
+<intro-screen-component></intro-screen-component>
+<settings-component></settings-component>
+
+<!-- Kindness Generator -->
+<kindness-generator-component></kindness-generator-component>    
+<compassion-flow-component></compassion-flow-component>
+
+
+<div class='dailyCompassion' onclick='dayNotifications()'></div>
+<div class='weeklyCompassion' onclick='weekNotifications()'></div>
+
+<!--Black square to stop hands-->
+<div class="preventHands"></div> 
+
+<!--Black square to stop thorns-->
+<div class="preventThorns"></div> 
+<div class="preventThornsGrad"></div>
+
+<!-- Black square to protect hands -->
+<div class="calBg"></div>
+
+<div class="pretentiousContainer"></div>
+
+<div id="tourContainer">
+
+     <!--quit tour -->
+    <p (click)="tourComponent.skipTour()" class="tourButton skipTour">Skip &nbsp; 
+      <img src="./img/icons/quit.png" width="20px">
+    </p>
+
+    <!--continue tour-->
+    <p (click)="tourComponent.continueTour()" class="tourButton continueTour">
+    Continue Tour &nbsp; 
+    <img src="./img/icons/continue.png" width="20px">
+    </p>
+
+ </div>
+
+  <!--show button-->
+  <!--<div class="menuItem" id="sonnyIcon" (click)="sonnyHelp.helpView()">
+    <a>
+      <img src="./img/icons/sonny.svg">
+      <p id="sonnyState">CALL</p>
+    </a>
+  </div>-->
+
+<div class="menuItem" id="sonnyIcon" (click)="sonnyClick()">
+    <a>
+      <img src="./img/icons/more.png">
+      <p id="sonnyState">MORE</p>
+    </a>
+  </div>
+
+<!-- GO TO CAL -->  
+<div class="kindnessCal">
+  <div class="menuItem goToCal" (click)="goCalComponent.toCal()">
+    <a>
+      <img src="./img/caly/chatIdle.png">
+      <p>Check Progress</p>
+    </a>
+  </div>
+</div><!--go to cal view-->
+
+<weather></weather> 
+<sonny></sonny>
+
+<div id="birdContainer">
+  <img id="bird1" src="./img/scenes/bird.gif">
+  <img id="bird2" src="./img/scenes/bird.gif">
+</div>
+
+
+<!--Content-->
+<div class="centerContent">
+  <center>
+
+    <div id="kindnessView">
+      
+      <name-email></name-email>
+      
+      <div class='missionView'>
+        <div (click)='generatorBackend.itentionComplete("intention"); submitKindnessComplete.kindnessSuccess();'>     
+          <h1 id='kindnessText'></h1>
+          <div class="intentionTask kindnessIntention"></div>              
+          <div class="themeButton selected kindSubmit">
+            is complete!
+          </div>
+        </div>
+        
+            <div id="submitCheck" style="display:none"></div>
+            <h1 class="orTxt">or</h1>
+
+
+            <div class="themeButton selected kindSubmit" (click)="alternativeKindness.classicView()">
+                I performed another kindness
+            </div>
+
+        </div> <!-- mission view -->
+      <!-- CLASSIC VIEW -->
+      <div class='classicView' style='display : none'>
+        <div action="" id="kindness" style="width: 80%">
+          <div id="input">
+            
+          <!-- <h1 id='whoText'> <img src="./img/icons/heart.png" width="40px"> For Who</h1>
+            <input class="input" type="text" id="inputPerson" placeholder="Who did you do a kindness for?">
+          -->
+            
+            <h1 id='kindnessText'> 
+              
+              <img src="./img/icons/heart.png" width="40px">               
+              Kindness
+            </h1>
+            <input (click)="inputNameEmail.scrollUp('kindness')" class="input" type="text" id="inputKindness" placeholder="What was today's kindness?">        
+          </div>
+
+          <div class="themeButton selected kindSubmit" (click)="submitKindnessComplete.kindessSubmit()">
+            submit
+          </div>
+          <div id="submitCheck" style="display:none"></div>
+          <h1 class="orTxt">or</h1>
+          <!--if intention is true-->
+          <div class='itentionFound'>
+          
+            <!-- generator component -->
+            <div class="intentionTask"></div>
+            <div class="completeContainer">
+            
+                <div class="intention-complete" (click)='generatorBackend.itentionComplete("intention"); submitKindnessComplete.kindnessSuccess();'>
+                  <div class="intention-complete--content"></div>
+                </div>    
+                Complete?
+            </div>
+            <!-- generator component -->
+
+
+          </div>
+          
+          <!--if intention is false-->
+          <div class="itentionNotFound themeButton selected intention" (click)="kindnessGenerator.intGenerator()">
+            set an intention
+          </div>
+        </div> 
+      </div> <!-- classic view -->
+    </div>
+    </center>
+    </div>
+    <!-- kindness view -->
+    
+    <!-- KINDNESS DONE VIEW  -->
+    <div>
+    <center>
+    <!--<div id="calVictory" style="display: none;"></div>-->
+    <div id='doneView'>    
+      <h1> Your daily kindness is complete!! <br>
+           New day starts in <u class='hoursLeft'>{{submitKindnessComplete.timeLeft}}</u> hours.
+     </h1>         
+      <div class="thankyou themeButton selected" (click)="inputNameEmail.intName()" style='display: none;'>
+        <p>
+          <span class='txt'>Thank You!!</span>
+          <span class='icon'><img src="./img/icons/achievement_outline.png"></span>
+        </p>
+      </div>
+      
+      <div class="themeButton selected" (click)="submitKindnessComplete.backToKindness();">
+        <p>
+          <span class='txt'>Replace Kindness</span>
+          <span class='icon'><img src="./img/icons/hear_outline.png"></span>
+        </p>
+      </div>
+      
+      <div class="themeButton selected compassionSelect" (click)="compassionFlow.intGenerator()">
+        <p>
+          <span class='txt'>Compassion exercises</span>
+          <span class='icon'><img src="./img/icons/achievement_outline.png"></span>
+        </p>
+      </div>
+      <!-- (click)="settingsComponent.intSettings()" -->
+      <div class="themeButton selected intentionFinished" (click)="goToIntention()">
+        <p>
+          <span class='txt'>Set Intention</span>
+          <span class='icon'><img src="./img/icons/target.svg"></span>
+        </p>
+      </div>
+    </div>
+    <!-- kindness done view -->
+
+     <sonny-speech
+      (helpView)="helpView()">
+    </sonny-speech>
+
+    
+    <!-- Help Screen 
+    <div id='helpView'>
+            <div class="themeButton selected" (click)="giveExample()">
+                set an intention
+            </div>
+
+             <tour-component></tour-component> 
+
+            <div class="themeButton selected" (click)="settingsComponent.themeView()">
+              theme change 
+            </div>
+            
+           <div class="themeButton selected" (click)="settingsComponent.intSettings()">
+              more 
+            </div>
+
+            <div class="themeButton selected" (click)="sonnyHelp.goBack('help')">
+                go back
+            </div>
+        </div>
+    <!--help screen-->
+
+
+    <!-- Theme Change -->
+    <div id='themeChange'>
+      <div class="themeButton summer" [class.selected]="selectedBackground == 'summer'" (click)="themeComponent.theme = 'summer'; themeComponent.selectButton('summer');">
+        summer
+      </div>
+
+      <div class="themeButton winter" [class.selected]="selectedBackground == 'winter'" (click)="themeComponent.theme = 'winter'; themeComponent.selectButton('winter');">
+        winter
+      </div>
+
+      <!-- <div class="themeButton autumn" [class.selected]="selectedBackground == 'autumn'" (click)="theme = 'autumn'; selectButton('autumn');">
+        autumn
+      </div>
+
+
+      <div class="themeButton pretentious" [class.selected]="selectedBackground == 'pretentious'" (click)="themeComponent.theme = 'pretentious'; themeComponent.selectButton('pretentious');">
+        pretentious
+      </div> -->
+        
+      <div class="themeButton autumn" (click)="themeComponent.back()">
+        back
+      </div>
+
+    </div>
+    <!--theme-change-->
+
+  </center>
+</div>
+<!--content end-->
+<img src="{{themeComponent.furnitureImg}}" class="furniture">
+
+<!-- Background -->
+<div class="theme" [ngClass]="themeComponent.changeTheme()">
+
+  <div class="sky bg"></div>
+
+  <div class="beach-rect"></div>
+
+  <svg class="beach-top bg" viewBox="0 0 717 230">
+    <g id="Page-1" fill="#fffad2" fill-rule="evenodd">
+      <rect id="Rectangle-1" x="0" y="33" width="716" height="196.017332"></rect>
+      <path d="M0,15.625 C0,15.625 140.924547,23.976017 291.600892,10.163517 C442.277237,-3.648983 433.596176,11.0926514 480.257123,5.87519836 C520.249328,1.40341912 562.809873,2.19276048 591.529336,1.27363607 C681.071974,-1.5920451 716.239348,1.27363609 716.239348,1.27363609 L716.239348,44.4212547 L0,44.4212547 L0,15.625 L0,15.625 Z"
+        id="Path-1"></path>
+    </g>
+  </svg>
+
+  <svg class="beach-bottom bg" viewBox="0 0 700 211">
+    <g id="Page-1" fill="#fffad2" fill-rule="evenodd">
+      <path d="M0.00078204,193.668653 L0.00078204,205.33183 C0.00078204,205.33183 -0.614922758,207.473824 32.70578,209.148276 C66.0264828,210.822729 126.426304,208.838998 126.426304,208.838998 L192.548591,206.999034 L309.662021,206.380477 C309.662021,206.380477 378.206896,207.240657 403.338279,206.286244 C428.469661,205.33183 400.440822,206.463837 438.638911,204.889658 C476.837001,203.31548 514.689002,208.838998 532.886611,205.33183 C551.08422,201.824662 545.313464,205.33183 573.543507,201.705058 C601.77355,198.078286 617.790025,204.756765 640.293575,201.705058 C662.797125,198.653351 658.909681,200.598421 680.926298,199.308151 C702.942915,198.01788 708.255988,201.301538 714.214838,201.705058 C718.769985,202.013522 714.214838,192.371134 714.214838,192.371134 L0.00078204,193.668653 L0.00078204,193.668653 Z"
+        id="Path-2"></path>
+      <rect id="Rectangle-1" x="0" y="0.0651424948" width="716" height="196.017332"></rect>
+    </g>
+  </svg>
+
+  <div id='sea' class="sea bg">
+    <cal-view></cal-view>    
+
+   <!--SCROLL CONTAINER-->
+   <!--<div class="scrollContainer">
+      <p>scroll</p>
+      <p class="vertical"> &gt;&gt; </p>      
+    </div>-->
+    <!--scroll container-->
+    
+  </div>
+</div>
+

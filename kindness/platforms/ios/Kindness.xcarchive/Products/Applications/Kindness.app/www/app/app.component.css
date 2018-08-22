@@ -1,0 +1,535 @@
+#kindnessView {
+  position: absolute;
+  width: 100%;
+}
+
+/*
+* LINKS
+*/
+.kindnessCal {
+  position: absolute;
+  z-index: 12;
+  right: 0px;
+  bottom: 0px;
+}
+
+
+.sonnyCall{
+  position: absolute;
+  z-index: 5;
+  left: 10px;
+  top: 0px;
+}
+
+/* .kindnessCal .menuItem{
+  width: 95vw;
+  padding: 2px 5px;
+} */
+
+#sonnyIcon{
+  opacity: 1;
+  z-index: 13;
+  right: -100px;
+  position: absolute;
+  padding: 0px;
+  transition: right 1s, padding 1s; 
+}
+
+#sonnyIcon img{
+  transition: height 1s;
+}
+
+#sonnyIcon p{
+  transition: font-size 1s;
+}
+
+#sonnyState{
+      font-size: 20px;
+      color: #000000;
+      text-shadow: 1px 1px #000;
+      letter-spacing: 2px;
+}
+
+.jiggleLink{
+    animation-name: jiggleLink;
+    animation-duration: .5s;
+    animation-iteration-count: 4;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: jiggleLink;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 4;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes jiggleLink {
+    0%   {margin-top: 10px; opacity: 0;}
+    25%  {margin-top: 0px; opacity: 0.6;}
+    50%  {margin-top: 20px; opacity: 0.6;}
+    100% {margin-top: 10px; opacity: 1;}
+}
+
+
+
+.jiggleOpac{
+    animation-name: jiggleOpac;
+    animation-duration: .5s;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: jiggleOpac;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 3;
+    -webkit-animation-fill-mode: forwards;
+    pointer-events: none;
+    opacity: 1;
+}
+
+@keyframes jiggleOpac {
+    0%   {margin-top: 10px;  opacity: 1;}
+    25%  {margin-top: 0px;}
+    50%  {margin-top: 20px;}
+    100% {margin-top: 10px;  opacity: 1;}
+}
+
+
+
+@media (max-width: 321px) {
+  .kindnessCal{
+    bottom: -2.5px;
+    right: -2.5px;
+  }
+}
+/* links */
+
+/* KINDNESS SCREEN */
+
+
+#kindness h1{
+  font-size: 42px;
+  margin:0px;
+  padding:0px;
+
+   
+}
+
+#kindness .input{
+  margin:0px;
+  background: rgba(256,256,256,0.7);
+  padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+}
+/* kindness screen */
+
+
+/*
+* KINDNESS DONE VIEW
+*/
+#doneView {
+  display: none;
+  margin-left: -600%;
+  position: absolute;
+  width: 100%;
+  z-index: 8;
+  top: 30%;
+}
+
+#doneView .themeButton{
+  height: 7vh;
+}
+
+#doneView .pretentiousTxt{
+  height: 5.5vh;
+}
+
+#doneView .themeButton p{
+  padding: 10px;
+  padding-top: 6px;
+  margin-top: 0px;
+}
+
+#doneView .themeButton p .txt{
+  text-align: left;
+  float: left;
+}
+
+#doneView .themeButton p img{
+  height: 5.5vh;
+}
+
+#doneView .themeButton p .icon{
+  float: right;
+}
+
+.intentionFinished img, #doneView .themeButton p .calIcn{
+  margin-right: -1.5vw;
+}
+/* done view */
+
+/* PAGE LAYOUT */
+.sky{
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+  height: 50vh;
+  width:100%;
+
+}
+
+.sea{
+  width: 100%;
+  display: block;  
+  position: absolute;
+  bottom: 0px;
+  z-index: 0;
+  height: 100%;
+  top: 100%;
+  margin-top: -120px;
+  padding-bottom: 120px;
+}
+
+
+.beach-bottom,.beach-top{
+  z-index: 6;
+  position: absolute;
+  fill: #fffad2;
+  transition: fill 1s ease;
+}
+
+
+
+.beach-top{
+  top: 180px; 
+}
+
+.beach-bottom{
+  bottom: 75px; 
+}
+
+.furniture{
+  position: absolute; 
+  width: 200px; 
+  left: 10px; 
+  z-index: 7; 
+  bottom: 17.5vh;
+  opacity: 0.8;
+}
+
+/*
+BIRDS
+*/
+#birdContainer{
+position: absolute;
+top: 50px;
+left: -350px;
+z-index: 1;
+-webkit-transition: left 40s; /* Safari */
+transition: left 40s;
+transition-timing-function: linear;
+-webkit-transition-timing-function: linear;
+}
+
+#bird1{
+  width: 70px;
+  left: 150px;
+  top: 50px;
+  position: absolute;
+}
+
+#bird2{
+  width: 80px;
+  left: 250px;
+  position: absolute;
+}
+/*birds*/
+
+/* iNPUTS */
+#kindnessView #input{
+  text-align: left;
+}
+/* inputs */
+
+
+/* page layout */
+
+/* THEME BUTTONS */
+#themeChange{
+  display: none;
+}
+
+.summer{
+    background: #fffad2;
+}
+
+.winter{
+    background: #fff;
+}
+
+.autumn{
+  background: #F1E7C3;
+}
+
+.pretentious{
+  background: black; 
+  color: white;
+}
+/*theme buttons*/
+
+
+
+/* SUMMER THEME */
+.summer .sky{
+  background: #b0ddd6;
+}
+
+
+
+.beach-bottom,.beach-top{
+  fill: #fffad2;  
+}
+
+
+.summer .sea{
+  background: #b6e5ed;
+}
+
+
+/* WINTER THEME */
+.winter .sky{
+  background: #EAF7FF;
+}
+
+.winter .beach-bottom g,.winter .beach-top g{
+  fill: #FFFFFF;
+}
+
+.winter .beach-rect{
+  background: #FFFFFF;
+}
+
+.winter .sea{
+  background: #D6EDED;
+}
+
+/* AUTUMN THEME */
+.autumn .sky{
+  background: #FFC98D
+}
+
+.autumn .beach path, .autumn .beach rect {
+  fill: #F1E7C3;
+}
+
+.autumn .sea{
+  background: #F6805C
+}
+
+/* PRETENTIOUS THEME */
+
+.pretentious .sky{
+  background: black;
+}
+
+.pretentious .sea {
+  background: black;
+}
+
+.preventThorns{  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 5;
+  background: black;
+  width: 200px;
+  height: 100px;
+}
+
+.calBg{
+  bottom: 0px;
+  right: 0px;
+  height: 85px;
+  width: 100px;
+  opacity: .5;
+  position: absolute;
+  z-index: 5;
+  background: black;
+}
+
+.preventThornsGrad{
+  
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  z-index: 5;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  width: 100px;
+  height: 70px;
+}
+
+.preventHands{
+    display: none;
+    width: 90px;
+    height: 180px;
+    background: black;
+    position: absolute;
+    z-index: 11;
+    right: 0px;
+    opacity: 0.6;
+}
+
+.pretentious .beach-rect,
+.pretentious .beach-bottom g,
+.pretentious .beach-top g
+{
+  fill: #403e40;
+  background: #403e40;
+}
+
+.pretentiousTxt{
+  font-family: evil;
+  color: white; 
+}
+
+@media ( max-height: 1300px ){ /* rwxt on mobile*/
+  .pretentiousTxt{
+    font-size: 4vw !important;
+  }
+}
+.pretentiousSubmit{
+  background: #888 !important;
+  padding: 10px;
+}
+
+/*  theme end */
+
+
+
+.selected{
+  background: rgba(0,0,0,0.2);
+}
+
+.intention,.kindSubmit{
+  margin-top: 0px;
+}
+
+/*
+* TOUR
+*/
+#tourContainer{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    font-size: 22px;
+    display: none;
+}
+
+#tourContainer .tourButton{
+   border: black solid 1px;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+#tourContainer .continueTour{
+    width: 62vw;
+    right: 10px;
+}
+
+#tourContainer .skipTour{
+    left: 10px;
+    width: 22vw;
+}
+
+#tourContainer .tourButton img{
+  vertical-align: text-top;
+}
+
+
+
+/*
+* HELP VIEW
+*/
+#doneView,#contactView,#helpView{
+  margin-left: -600%;
+  position: absolute;
+  width: 100%;
+}
+
+#doneView h1{
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+}
+
+
+h3{
+    margin-bottom: 0px;
+    font-size: 22px;
+}
+
+#inputMessage{
+    width: 100%;
+    padding-bottom: 100px;
+     font-size: 5vw;
+}
+
+    input[type=text], ::-webkit-input-placeholder {
+    font-size: 7.5vw;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: black;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: black;
+}
+
+
+/*
+* GENERATOR COMPONENT
+*/
+
+/*
+*  INTENTION RELATED
+*/ 
+.completeContainer{
+  font-size: 30px;
+  float: right;
+  width: 20%;
+}
+
+.intention-complete {
+  border: 1px solid black;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+
+}
+
+.intention-complete--clicked .intention-complete--content{
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+}
+/* intention */
+
+/* generator component */
+
+modal{
+  display: none;
+}

@@ -1,0 +1,71 @@
+<div id='compassion-flow'>
+<h2 class='customKindness'><a (click)="removeGenerator(); alternativeKindness.classicView()">(I don't need a suggestion)</a></h2>
+<button id='launchBroraid' class='launchBroraid' style='display: none' (click)='generatorBackend.badBroOut()'></button>
+
+<div id='kindness-generator'>
+<swiper-component></swiper-component>
+
+    <img src='img/scenes/generator/left-right.gif' class='handLeft'>
+    <img src='img/scenes/generator/right-left.gif' class='handRight'>
+
+
+
+    <!--click to go left & right-->
+    <div class="prev arrow">
+        <p>
+          scroll
+          <br><img src="img/icons/arrow.png" width="40px;">
+          <br>go back
+        </p>
+      </div>
+
+
+    <div class="next arrow">
+      <p>
+        scroll
+        <br><img src="img/icons/arrow.png" width="40px;">
+        <br>for next
+      </p>
+    </div>
+ 
+    <div class='kindnessContainer'>
+        <div class="stillNasty themeButton selected" (click)="removeGenerator()">
+              I'm still feeling nasty
+        </div>
+        <div class="backToKindness themeButton selected" (click)="tryKindness()">
+              Let's try some kindness
+        </div>
+
+
+      <!-- <p class='kindnessTxt'></p> -->
+
+
+
+      <textarea (click)="inputNameEmail.scrollUp('kindnessGenerator')" class='kindnessEdit'></textarea>
+      <!--<div class='themeButton selected generatorEdit' (click)='acceptSubmit'> submit </div>    -->
+
+      <!--<div class='themeButton selected generatorEdit'> add a suggestion for others </div>    -->
+    </div>
+
+
+    <div class='realStopHelp' (click)='helpComponent.stopHelp("hide")'></div>
+
+
+    <div class='helpMenu' (click)='helpComponent.compassionHelp()'>
+        <div class="menuItem">
+            <a>
+              <h1><span class='circle'>?</span>  
+                <p style='font-size:20px; float: right;'>help</p></h1>
+            </a>
+        </div>
+    </div>
+
+    <div class='editMenu' (click)='editComponent.editingDone()'>
+      <div class="menuItem">
+          <a>
+            <h1><span class='circle'>←</span>  
+              <p style='font-size:20px; float: right;'>cancel</p></h1>
+          </a>
+      </div>
+  </div>
+</div>

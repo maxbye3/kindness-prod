@@ -1,0 +1,26 @@
+.nameEmail{
+    text-align: center;
+    display: none;
+    width: 80%;
+}
+
+#inputKindness{
+    font-family: Kindness;
+    margin: 0px;
+    font-size: 30px;
+    background: rgba(256,256,256,0.7);
+    padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+}
+
+.selected {
+    text-align: center;
+    width: 100%;
+}
+
+.inputName,.inputEmail{
+    width: 100%;
+    font-size: 30px;
+}

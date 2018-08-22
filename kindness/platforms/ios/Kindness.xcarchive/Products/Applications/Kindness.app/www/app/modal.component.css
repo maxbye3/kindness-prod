@@ -1,0 +1,32 @@
+.modalBg {
+  display: block;
+  z-index: 2000;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  opacity: .4;
+}
+
+.modalDescript{
+  padding: 10px;
+}
+
+.modalBox {  
+  letter-spacing: 1.2px;
+  text-align: center;
+  width: 50%;
+  margin: 25%;
+  -webkit-transition: margin-top 2s; /* Safari */
+  transition: margin-top 2s;
+  margin-top: 0px;
+  position: absolute;
+  z-index: 2001;
+  background: white;
+}
+
+
+.btnText{
+  border: black solid 1px;
+  margin: 5px;
+}

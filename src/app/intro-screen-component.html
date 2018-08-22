@@ -1,0 +1,30 @@
+<!-- <h1>
+    <button class='btn btn-success'>WORK</button>
+</h1> -->
+
+
+<div class='iosFix'></div>
+<div class="introContainer">
+    <div theme="" class="skipContainer" (click)="skipButton(true)">SKIP</div>
+    <div class="topMargin"></div>
+    <div class="container">            
+        <div id="star12" style='display:none'></div>
+        <div class="welcomeBg" id="introScreen"></div>
+        <div class="welcomeBg charBg" id="charContainer"></div> 
+        <img id="sonnyIntro" src="./img/sonny/intro.gif?t=1478724541646">
+         <img id="otherChars" src="" style="display: none">
+        <div class="textContainer">
+            <div id="introTxt">
+                Welcome! <br> This app will help you become a kinder more compassionate person by getting you to record a daily kindness.
+            </div>               
+            <div (click)="btnClick1()" class="btn">
+                Continue
+            </div>
+            <div class="btn2" (click)="btnClick2()" style="display:none">
+                Maybe later?
+            </div>
+            <div class="btn3" (click)="challengeExplained()" style="display:none">
+                A compassion.. wha?
+            </div>
+        </div>
+    </div>
