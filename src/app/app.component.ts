@@ -11,6 +11,7 @@ import {WeatherComponent} from './weather.component';
 import {KindnessService} from './kindness.service';
 import { LetterComponent } from './letter.component';
 import {TimeService} from './time.service';
+import {checkDayDirective} from './data/checkDay.directive';
 import {inputNameEmail} from './inputNameEmail.component';
 import {SettingsComponent} from './settings.component';
 import { HelpComponent } from './generator/help.component'
@@ -97,7 +98,9 @@ declare var jQuery: any;
     EditComponent,
     ManagerDirective,
     finishedTransition,
-    calanderTransition
+    calanderTransition,
+    suggestionsTransition,
+    checkDayDirective
   ]
 })
 

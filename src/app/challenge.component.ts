@@ -23,8 +23,9 @@ export class ChallengeComponent implements OnInit{
    */
    checkFailure(dateArray,today){
     // you cannot fail day one  
+    var userGrade;
     if(localStorage.getItem("compassionChallenge") == '1'){
-        return false;
+        userGrade = false;
     }
     for(var i = 0; i < dateArray.length; i++){        
         today;                       
@@ -39,14 +40,21 @@ export class ChallengeComponent implements OnInit{
         
         if(today == 1){
           localStorage.setItem("compassionIteration",'true');
-          return false;
+          userGrade = false;
 
         }
 
         if(parseInt(str) + 1 == today || parseInt(str) == today){
           localStorage.setItem("compassionIteration",'true');
-          return false;
-        }        
+          userGrade = false;
+        }
+
+        if(userGrade == false){
+          localStorage.setItem("compassionIteration","false");
+        }
+        else{
+          localStorage.setItem("compassionIteration","true");
+        }
       }  
       
       this.stopCompassion();

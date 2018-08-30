@@ -4,13 +4,13 @@ import {SonnyComponent} from './sonny.component';
 import {SonnyDialogue} from './sonny.dialogue.component';
 import {ChallengeComponent} from './challenge.component';
 import {BoatComponent} from './boat.component';
-import {TimeService} from './time.service';
+import {checkDayDirective} from './data/checkDay.directive';
 import { GeneratorBackend } from './generator.component';
 declare var jQuery: any;
 
 @Directive({
   selector: 'theme-component',
-  providers:[GeneratorBackend, BoatComponent, ChallengeComponent, PretentiousComponent, SonnyComponent, SonnyDialogue, TimeService]  
+  providers:[GeneratorBackend, BoatComponent, ChallengeComponent, PretentiousComponent, SonnyComponent, SonnyDialogue, checkDayDirective]  
 })
 
 export class ThemeComponent {
@@ -24,7 +24,7 @@ export class ThemeComponent {
       private generatorBackend : GeneratorBackend,
       private sonnyComponent : SonnyComponent,
       private sonnyDialogue : SonnyDialogue,
-      private timeService : TimeService,
+      private checkDayDirective : checkDayDirective,
       private challengeComponent : ChallengeComponent,
       private boatComponent : BoatComponent
     ) {}
@@ -183,7 +183,7 @@ export class ThemeComponent {
           classname = 'kindnessView';
       }
       
-      this.timeService.dayCheck(classname); 
+      this.checkDayDirective.dayCheck(classname); 
     }
 
     selectButton(theme){

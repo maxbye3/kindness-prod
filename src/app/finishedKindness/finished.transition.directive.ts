@@ -12,15 +12,30 @@ export class finishedTransition {
     */
    intDone(){
 
-    if($('#kindnessView').attr('kindnessComplete') == 'true'){
-      $('.missionView').hide();
-      $('.classicView').hide();
+    $('#kindnessView').attr('kindnessComplete','true');
+    $('#kindnessView').hide();
+    $('.missionView').hide();
+    $('.classicView').hide();
 
-      // show done view
-      $('#doneView').show();
-      document.getElementById("doneView").className = "";  
-      document.getElementById("doneView").className += " intro";
-    }
+    // show done view
+    $('#doneView').show();
+    document.getElementById("doneView").className = "";  
+    document.getElementById("doneView").className += " intro";
+
+    // hide kindness view
+    document.getElementById("kindnessView").className = "";  
+    document.getElementById("kindnessView").className += " outro";
+    $('#kindnessView').fadeOut();
+
+
+    // if theme undefined then go to summer
+    var theme = $(".skipContainer").attr('theme');
+    if(!theme){                    
+        $(".skipContainer").attr('theme','summer');                 
+    } 
+
+
+    
 
     // $('.kindnessCal img').attr('src','./img/icons/caly.svg');
 

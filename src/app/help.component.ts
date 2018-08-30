@@ -6,7 +6,7 @@ import { SonnyDialogue } from './sonny.dialogue.component';
 import { VoterComponent } from './voter.component';
 import { TourComponent } from './tour.component';
 import { ThemeComponent } from './theme.component';
-import { TimeService } from './time.service';
+import {checkDayDirective} from './data/checkDay.directive';
 
 declare var jQuery: any;
 
@@ -16,7 +16,7 @@ declare var jQuery: any;
     template: ``,
     styleUrls: ["app/sonny.dialogue.component.css"],
     directives: [TourComponent,SonnyDialogue],
-    providers: [TimeService, ThemeComponent, SonnyComponent,PretentiousComponent, SonnyDialogue]
+    providers: [checkDayDirective, ThemeComponent, SonnyComponent,PretentiousComponent, SonnyDialogue]
 })
 
 @Injectable()
@@ -25,7 +25,7 @@ export class SonnyHelp implements OnInit {
     private hoursLeft;
    
     constructor(      
-        private timeService : TimeService,
+        private checkDayDirective : checkDayDirective,
         private themeComponent : ThemeComponent,
         private sonnyDialogue: SonnyDialogue, 
         private sonnyComponent: SonnyComponent,
@@ -132,7 +132,7 @@ export class SonnyHelp implements OnInit {
     */
     goBack(page){ 
         
-        this.timeService.dayCheck('kindnessView');
+        this.checkDayDirective.dayCheck('kindnessView');
         if(this.sonnyComponent.sonnyPresent == false){
           this.pretentiousComponent.goBack();
         }

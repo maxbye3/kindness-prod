@@ -1,17 +1,17 @@
 import { Directive } from '@angular/core';
-import { TimeService } from './time.service';
+import {checkDayDirective} from './data/checkDay.directive';
 import { ThemeComponent } from './theme.component';
 declare var jQuery: any;
 
 @Directive({
-  providers: [TimeService, ThemeComponent]
+  providers: [checkDayDirective, ThemeComponent]
 })
 
 export class Cordova {
     
     constructor(
         private themeComponent: ThemeComponent,
-        private timeService : TimeService
+        private checkDayDirective : checkDayDirective
     ) {}
     
     // Handle the resume event
@@ -57,7 +57,7 @@ export class Cordova {
             classname = 'kindnessView';
         }
         
-        this.timeService.dayCheck(classname); 
+        this.checkDayDirective.dayCheck(classname); 
         jQuery(".sonnyContainer").attr("introAllowed","true");
         this.themeComponent.setTheme('summer'); 
 
