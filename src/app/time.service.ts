@@ -2,19 +2,20 @@ import {Directive, ElementRef} from '@angular/core';
 import { Injectable } from '@angular/core';
 import {ChallengeComponent} from './challenge.component';
 import { AlternativeKindness } from './alternativeHome/alternateKindnessView.component';
-
+import { finishedTransition } from './finishedKindness/finished.transition.directive';
 
 declare var $ : any;
 
 @Directive({        
-    providers: [ChallengeComponent, AlternativeKindness]
+    providers: [finishedTransition, ChallengeComponent, AlternativeKindness]
 })
 
 @Injectable()
 export class TimeService  {
    
     constructor(
-        private challengeComponent : ChallengeComponent
+        private challengeComponent : ChallengeComponent,
+        private finishedTransition : finishedTransition
     ) {}
     
 
@@ -39,26 +40,6 @@ export class TimeService  {
             }, 500);  
         }
     }
-
-    /*
-    * BACK TO DONE
-    */
-    backToDone(){
-
-      if($('#kindnessView').attr('kindnessComplete') == 'true'){
-        $('.missionView').hide();
-        $('.classicView').hide();
-
-        // show done view
-        $('#doneView').show();
-        document.getElementById("doneView").className = "";  
-        document.getElementById("doneView").className += " intro";
-      }
-
-      // $('.kindnessCal img').attr('src','./img/icons/caly.svg');
-
-    }
-
 
     /*
     * Check for new day
@@ -161,8 +142,7 @@ export class TimeService  {
                 // remove kindness view
                 document.getElementById(classname).className = "";  
                 document.getElementById(classname).className += " outro";
-                
-                this.backToDone();
+                this.finishedTransition.intDone();
 
                 // $("doneView").attr('welcome','true');
                 $('#kindnessView').fadeOut();

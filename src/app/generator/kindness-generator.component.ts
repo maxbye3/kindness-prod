@@ -9,7 +9,7 @@ import { SwiperComponent } from '../generator/swiper.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';
 import { HelpComponent } from '../generator/help.component'
 import { EditComponent } from '../generator/edit.component'
-import { TimeService } from '../time.service';
+import { finishedTransition } from '../finishedKindness/finished.transition.directive';
 declare var jQuery: any;
 declare var Swiper: any;
 
@@ -19,14 +19,14 @@ declare var Swiper: any;
     templateUrl: 'app/generator/kindness-generator.html',
     styleUrls: ['app/generator/kindness-generator.css'],
     directives: [SwiperComponent],
-    providers: [TimeService, SwiperComponent, ThemeComponent,SonnyDialogue,GeneratorBackend, BadBroDialogue, inputNameEmail]
+    providers: [finishedTransition, SwiperComponent, ThemeComponent,SonnyDialogue,GeneratorBackend, BadBroDialogue, inputNameEmail]
 })
 
 export class KindnessGenerator {
     
   constructor(
    private swiperComponent : SwiperComponent,
-   private timeService: TimeService,
+   private finishedTransition: finishedTransition,
    private sonnyDialogue : SonnyDialogue,
    private inputNameEmail : inputNameEmail,
    private generatorBackend : GeneratorBackend,
@@ -49,7 +49,7 @@ export class KindnessGenerator {
    * @param - BOOL complain - whether to save or not 
    */
    accepted(save){
-      this.timeService.backToDone();
+      this.finishedTransition.intDone();
 
       // save slide to local storage
       var slideNumber = jQuery('.sliderComponent').attr('currentSlide');

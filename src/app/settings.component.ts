@@ -13,7 +13,7 @@ import { BadBroDialogue } from './badBroDialogue.directive';
 import { inputNameEmail } from './inputNameEmail.component';
 import { KindnessService } from './kindness.service';
 import { CompassionFlow } from './compassion/flow.component';
-import { TimeService } from './time.service';
+import { finishedTransition } from './finishedKindness/finished.transition.directive';
 import { AlternativeKindness } from './alternativeHome/alternateKindnessView.component';
 declare var jQuery: any;
 
@@ -31,7 +31,7 @@ export class SettingsComponent implements OnInit{
     private settings;
     
     constructor(
-      private timeService: TimeService,
+      private finishedTransition: finishedTransition,
       private modalComponent: ModalComponent,
       private compassionFlow : CompassionFlow,
       private kindnessService : KindnessService,
@@ -122,7 +122,7 @@ export class SettingsComponent implements OnInit{
           }
           this.returnHome();      
           this.back();
-          this.timeService.backToDone();
+          this.finishedTransition.intDone();
       //  }
     }/* int / remove narcissism */
     
@@ -176,7 +176,7 @@ export class SettingsComponent implements OnInit{
       }   
       // this.back(); 
       this.sonnyDialogue.greeting();              
-      this.timeService.backToDone();
+      this.finishedTransition.intDone();
     }
 
     /*

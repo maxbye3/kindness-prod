@@ -62,7 +62,7 @@ declare var jQuery: any;
     GoCalComponent,
     GeneratorBackend,    
     // AlternativeKindness,
-    WeatherComponent
+    WeatherComponent,
   ],
   providers: [
     HelpComponent,
@@ -95,7 +95,9 @@ declare var jQuery: any;
     TourComponent, 
     CompassionFlow,
     EditComponent,
-    ManagerDirective
+    ManagerDirective,
+    finishedTransition,
+    calanderTransition
   ]
 })
 
@@ -117,7 +119,7 @@ export class AppComponent  implements OnInit{
       private generatorBackend : GeneratorBackend,
       private settingsComponent : SettingsComponent,
       private themeComponent: ThemeComponent,
-      private timeService : TimeService,
+      private finishedTransition : finishedTransition,
       private tourComponent : TourComponent,
       private IntroScreens : IntroScreens,
       private submitKindnessComplete : SubmitKindnessComplete,
@@ -176,7 +178,7 @@ export class AppComponent  implements OnInit{
           this.sonnyDialogue.greeting();    
         }     
         
-        this.timeService.backToDone();
+        this.finishedTransition.intDone();
         
         // change #sonnyIcon
         jQuery('#sonnyIcon img').attr('src','./img/icons/more.png');
@@ -186,7 +188,6 @@ export class AppComponent  implements OnInit{
         // sonny icon when clicked goes to settings
         jQuery('#sonnyIcon').attr('settings','true');
         
-        // this.timeService.backToDone();
       }
     }
 }
