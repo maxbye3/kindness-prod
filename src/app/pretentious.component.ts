@@ -1,8 +1,8 @@
 import {Component, ElementRef} from '@angular/core';
-import {BoatComponent} from './boat.component';
+import {BoatComponent} from './settings/theme/boat.component';
 import {SonnyComponent } from './sonny.component'
 import { BadBroDialogue } from './badBroDialogue.directive'
-import {WeatherComponent } from './weather.component'
+import {WeatherComponent } from './settings/theme/weather.component'
  
 declare var jQuery: any;
 

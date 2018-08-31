@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Output, OnInit} from '@angular/core';
 import { SonnyDialogue } from './sonny.dialogue.component';
 import { SonnyComponent } from './sonny.component';
-import { CalComponent } from './cal.component';
-import { GoCalComponent } from './go.cal.component';
+import { CalComponent } from './calander/cal.component';
 declare var jQuery: any;
 
 
@@ -13,7 +12,7 @@ declare var jQuery: any;
                     show me the tour again
         </div>
     `,
-    providers: [SonnyDialogue, SonnyComponent,GoCalComponent,CalComponent]
+    providers: [SonnyDialogue, SonnyComponent,CalComponent]
 })
 
 export class TourComponent implements OnInit {

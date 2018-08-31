@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {ChallengeComponent} from '../challenge.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';
 import { finishedTransition } from '../finishedKindness/finished.transition.directive';
-import { calanderTransition } from '../calander/calander.transition.directive';
+import { calanderOutroTransition } from '../calander/outro.transition.directive';
 import { suggestionsTransition } from '../generator/suggestions.transition.directive';
 import {TimeService} from '../time.service';
 
@@ -19,7 +19,7 @@ export class checkDayDirective  {
     constructor(
         private challengeComponent : ChallengeComponent,
         private finishedTransition : finishedTransition,
-        private calanderTransition : calanderTransition,
+        private calanderOutroTransition : calanderOutroTransition,
         private suggestionsTransition : suggestionsTransition,
         private timeService : TimeService
     ) {}
@@ -36,7 +36,6 @@ export class checkDayDirective  {
     * @param dayCheck - STRING - what view is currently present (kindnessView)
     */
     dayCheck(classname){
-      
 
         /*
         * NOT SURE WHAT MEANS
@@ -56,7 +55,7 @@ export class checkDayDirective  {
         // $('.goToCal,.orTxt, .intentionTask, .completeContainer').show();
         /* not sure what means */
 
-        this.calanderTransition.exitCal();
+        this.calanderOutroTransition.exitCal();
         
 
         // update clock time to midnight

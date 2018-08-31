@@ -3,7 +3,7 @@ import {PretentiousComponent} from './pretentious.component';
 import {SonnyComponent} from './sonny.component';
 import {SonnyDialogue} from './sonny.dialogue.component';
 import {ChallengeComponent} from './challenge.component';
-import {BoatComponent} from './boat.component';
+import {BoatComponent} from './settings/theme/boat.component';
 import {checkDayDirective} from './data/checkDay.directive';
 import { GeneratorBackend } from './generator.component';
 declare var jQuery: any;

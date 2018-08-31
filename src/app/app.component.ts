@@ -4,10 +4,9 @@ import {SonnyDialogue } from './sonny.dialogue.component';
 import {SubmitKindnessComplete } from './submit-kindness.component';
 import {SonnyHelp } from './help.component';
 import { Cordova } from './cordova.directive';
-import {CalComponent} from './cal.component';
-import {GoCalComponent} from './go.cal.component';
+import {CalComponent} from './calander/cal.component';
 import {ModalComponent} from './modal.component';
-import {WeatherComponent} from './weather.component';
+import {WeatherComponent } from './settings/theme/weather.component'
 import {KindnessService} from './kindness.service';
 import { LetterComponent } from './letter.component';
 import {TimeService} from './time.service';
@@ -20,7 +19,7 @@ import {PretentiousComponent} from './pretentious.component';
 import {ThemeComponent} from './theme.component';
 import {TourComponent } from './tour.component';
 import {IntroScreens} from './intro-screens.component';
-import {BoatComponent} from './boat.component';
+import {BoatComponent} from './settings/theme/boat.component';
 import {ChallengeComponent} from './challenge.component';
 import {BadBroDialogue} from './badBroDialogue.directive';
 import {KindnessGenerator} from './generator/kindness-generator.component';
@@ -32,7 +31,8 @@ import { SwiperComponent } from './generator/swiper.component';
 import { AlternativeKindness } from './alternativeHome/alternateKindnessView.component';
 import { settingsTransition } from './settings/settings.transition.directive';
 import { themeTransition } from './settings/theme/theme.transition.directive';
-import { calanderTransition } from './calander/calander.transition.directive';
+import { calanderIntroTransition } from './calander/intro.transition.directive';
+import { calanderOutroTransition } from './calander/outro.transition.directive';
 import { suggestionsTransition } from './generator/suggestions.transition.directive';
 import { finishedTransition } from './finishedKindness/finished.transition.directive';
 import { ManagerDirective } from './state/manager.directive';
@@ -60,7 +60,7 @@ declare var jQuery: any;
     ModalComponent,
     CompassionFlow,
     CalComponent,
-    GoCalComponent,
+    calanderOutroTransition,
     GeneratorBackend,    
     // AlternativeKindness,
     WeatherComponent,
@@ -87,18 +87,19 @@ declare var jQuery: any;
     ThemeComponent,
     PretentiousComponent,
     SonnyComponent,
-    GoCalComponent,
     SonnyHelp,
     SonnyDialogue,    
     WeatherComponent,
     GeneratorBackend,
     CalComponent,
+    calanderIntroTransition,
+    calanderOutroTransition,
     TourComponent, 
     CompassionFlow,
     EditComponent,
     ManagerDirective,
     finishedTransition,
-    calanderTransition,
+    calanderIntroTransition,
     suggestionsTransition,
     checkDayDirective
   ]
@@ -116,7 +117,7 @@ export class AppComponent  implements OnInit{
       private alternativeKindness : AlternativeKindness,
       private compassionFlow : CompassionFlow,
       private inputNameEmail : inputNameEmail, 
-      private goCalComponent : GoCalComponent,
+      private calanderIntroTransition : calanderIntroTransition,
       private challengeComponent : ChallengeComponent,
       private sonnyHelp : SonnyHelp,
       private generatorBackend : GeneratorBackend,

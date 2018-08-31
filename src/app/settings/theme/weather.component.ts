@@ -14,9 +14,7 @@ declare var jQuery: any;
     </div>
     
 
-    `,
-    //styleUrls: ["app/sonny.dialogue.component.css"],
-    // providers: [SonnyComponent]
+    `
 })
 
 export class WeatherComponent implements OnInit {

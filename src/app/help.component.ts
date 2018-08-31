@@ -3,7 +3,6 @@ import { SonnyComponent } from './sonny.component';
 import { SubmitKindnessComplete } from './submit-kindness.component';
 import { PretentiousComponent } from './pretentious.component';
 import { SonnyDialogue } from './sonny.dialogue.component';
-import { VoterComponent } from './voter.component';
 import { TourComponent } from './tour.component';
 import { ThemeComponent } from './theme.component';
 import {checkDayDirective} from './data/checkDay.directive';

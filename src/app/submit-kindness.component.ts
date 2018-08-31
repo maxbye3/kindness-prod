@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 import {SonnyDialogue} from './sonny.dialogue.component';
 import {SonnyHelp} from './help.component';
-import {GoCalComponent} from './go.cal.component';
 import {KindnessService} from './kindness.service';
 import {SonnyComponent} from './sonny.component';
 import {TimeService} from './time.service';
 import {ChallengeComponent} from './challenge.component';
+import { calanderIntroTransition } from './calander/intro.transition.directive';
 import { PretentiousComponent } from './pretentious.component'
 import { AlternativeKindness } from './alternativeHome/alternateKindnessView.component'
 declare var jQuery: any;
@@ -18,10 +18,10 @@ declare var jQuery: any;
   styleUrls: ["app/sonny.dialogue.component.css"],
   providers: [
     KindnessService,
-    GoCalComponent,
     SonnyComponent,
     SonnyDialogue,
     ChallengeComponent,
+    calanderIntroTransition,
     PretentiousComponent,
     TimeService,
     SonnyHelp
@@ -34,7 +34,7 @@ export class SubmitKindnessComplete{
     constructor(
       private challengeComponent : ChallengeComponent,
       private pretentiousComponent : PretentiousComponent,
-      private goCalComponent:GoCalComponent,      
+      private calanderIntroTransition:calanderIntroTransition,      
       private kindnessService:KindnessService,
       private sonnyComponent:SonnyComponent,
       private sonnyHelp:SonnyHelp,

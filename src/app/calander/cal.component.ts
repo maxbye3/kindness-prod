@@ -1,26 +1,25 @@
 import {Component, OnInit} from '@angular/core';
+import { calanderOutroTransition } from './outro.transition.directive';
 declare var jQuery: any;
-import { KindnessService } from './kindness.service';
-import { ThemeComponent } from './theme.component';
-import { SonnyDialogue } from './sonny.dialogue.component';
-import { PretentiousComponent } from './pretentious.component';
+import { KindnessService } from '../kindness.service';
+import { ThemeComponent } from '../theme.component';
+import { SonnyDialogue } from '../sonny.dialogue.component';
+import { PretentiousComponent } from '../pretentious.component';
 
 @Component({
   selector: 'cal-view',
-  templateUrl:'app/cal.component.html',
-  styleUrls: ['app/cal.component.css'],
-  providers: [ SonnyDialogue, KindnessService, ThemeComponent, PretentiousComponent ]
+  templateUrl:'app/calander/cal.component.html',
+  styleUrls: ['app/calander/cal.component.css'],
+  providers: [ KindnessService, calanderOutroTransition ]
 })
 
 export class CalComponent implements OnInit {
 
-  private calyTimeout;
+  public calyTimeout;
   private animationTime = 0;
   constructor(
     private kindnessService:KindnessService,
-    private themeComponent : ThemeComponent,
-    private sonnyDialogue : SonnyDialogue,
-    private pretentiousComponent : PretentiousComponent
+    private calanderOutroTransition:calanderOutroTransition
   ) {}
     
   ngOnInit(){   
@@ -106,60 +105,7 @@ export class CalComponent implements OnInit {
    * Go To Kindness View
   */
     toKindness(){
-      jQuery('.goToCal,.orTxt, .intentionTask, .completeContainer').show();
-      jQuery('.helpMenu').show();
-      jQuery('.goToCal').show();
-
-       jQuery('.sliderComponent').show();
-       if(jQuery('#sonnyGif').attr('char') == 'badBro'){ 
-          // launch bad bro dialogue
-          this.pretentiousComponent.intBad('greet');
-        }
-        else {
-          jQuery('.handsContainer').hide();
-          setTimeout(() => { 
-            jQuery('.handsContainer').hide();
-          }, 500);
-          this.sonnyDialogue.greeting();
-        }   
-
-                   
-      jQuery('.kindnessCal').attr('kindnessView','true'); // stop cal from appearing                  
-      
-      // removes hands and thorns that screws up pretentious theme
-      jQuery(".handsContainer,.thornContainer").fadeIn("slow");
-      
-      // reset sonny
-      this.themeComponent.resetSonny();
-      
-      var calyPhone = <HTMLImageElement>document.getElementById("calyPhone");
-      calyPhone.style.display = "none";      
-      document.getElementById("calBubble").style.opacity = "0";
-      document.getElementById("calyGif").style.display = "none";     
-      
-      // remove caly again
-      jQuery("#calyGif").css("opacity","0").hide();
-      
-      jQuery("html, body").animate({ 
-        scrollTop: "0px"
-      }, 1000);  
-      
-      // DELETE CONTENTS OF SPEECH BUBBLE
-      setTimeout(() => { 
-        // remove caly again
-        jQuery("#calyGif").css("opacity","0").hide();
-      
-      
-        document.getElementById("calType").innerHTML = '';
-        jQuery("#calyIdle").css("opacity","0").hide();      
-      }, 1000);
-      
-      jQuery("#calyIdle").css("opacity","0").hide();  
-      
-
-      jQuery('.helpMenu').show();
-      jQuery('.goToCal').show();
-
+      this.calanderOutroTransition.exitCal();
     }
 
    /*
@@ -344,7 +290,7 @@ export class CalComponent implements OnInit {
     }  
 
      // Keep track on how many kindnesses people complete 
-     jQuery('#sonnyGif').attr('onclick', 'analytics("Kindness_Complete_' + taskComplete + '")').click(); 
+    //  jQuery('#sonnyGif').attr('onclick', 'analytics("Kindness_Complete_' + taskComplete + '")').click(); 
      
 
     /*

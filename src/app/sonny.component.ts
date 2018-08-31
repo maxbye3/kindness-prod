@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WeatherComponent} from './weather.component'
+import {WeatherComponent} from './settings/theme/weather.component'
 import { KindnessService } from './kindness.service';
 declare var jQuery: any;
 

@@ -25,7 +25,6 @@ export class TimeService  {
        return new Date();
     }   
 
-
     /* Return Date Array 
     If kindness array is empty then date array returns empty 
     otherwise return date array 
@@ -38,9 +37,8 @@ export class TimeService  {
         return JSON.parse(localStorage.getItem("dateArray"));
       }
     }
-
     
-     /*
+    /*
     * Format date.now() into day/month/year
     */
     formatDateNow(){
