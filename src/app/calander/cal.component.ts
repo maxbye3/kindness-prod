@@ -428,7 +428,7 @@ export class CalComponent implements OnInit {
   }
 
 
-  callCaly(){     
+  callCaly(){
       document.getElementById("calyCall").style.display = "none";
       document.getElementById("calBubble").style.opacity = "0"; 
       document.getElementById("calyGif").style.display = "block";  
@@ -454,11 +454,11 @@ export class CalComponent implements OnInit {
         case "intro": 
           document.getElementById("calyCall").style.display = "none";
           document.getElementById("calyGif").style.right = '-200px'  
-          window.scrollTo(0,document.body.scrollHeight); // scroll to bottom of page             
+          // window.scrollTo(0,document.body.scrollHeight); // scroll to bottom of page             
           calyImg.src = "./img/caly/intro.gif?t=" + new Date().getTime();              
           // Caly animation
           setTimeout(() => {  
-            window.scrollTo(0,document.body.scrollHeight); // scroll to bottom of page                
+            // window.scrollTo(0,document.body.scrollHeight); // scroll to bottom of page                
             calyImg.style.right = "0px";             
             this.calyTimeout = setTimeout(() => {                       
               this.calyState("idle");
