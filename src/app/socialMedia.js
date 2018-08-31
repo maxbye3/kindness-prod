@@ -24,7 +24,7 @@
  */ 
 
    function facebookShare(type){ 
-      jQuery('#sonnyGif').attr('onclick', 'analytics("facebook_share")').click();
+      // jQuery('#sonnyGif').attr('onclick', 'analytics("facebook_share")').click();
       if(type == 'finished'){
         var msg = 'I finished the 10 day compassion challenge! That\'s 5 acts of kindness in 5 days! Try it now';
       }
@@ -48,7 +48,7 @@
  * @param - STRING or INT type - either compassion challenge complete or number of task 
  */ 
  function twitter(type){
-    jQuery('#sonnyGif').attr('onclick', 'analytics("twitter_share")').click();
+    // jQuery('#sonnyGif').attr('onclick', 'analytics("twitter_share")').click();
     var hashtag = 'kindnessApp';
     if(type == 'finished'){ // compassion challenge finished
       var msg = 'I%20finished%20the%2010%20day%20compassion%20challenge!%20That\'s%2010%20acts%20of%20kindness%20in%2010%20days!%20Try%20it%20now';

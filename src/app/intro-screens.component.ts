@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {TourComponent } from './tour.component';
 import {KindnessGenerator} from './generator/kindness-generator.component'
 import { Cordova } from './cordova.directive';
-import { ThemeComponent } from './theme.component';
+import { ThemeComponent } from './settings/theme/theme.component';
 
 declare var jQuery: any;
 
@@ -123,7 +123,6 @@ export class IntroScreens {
    
    
    sonnyAnimations(){
-            // analytics as introduction page
             var sonnyImg = <HTMLImageElement>document.getElementById("sonnyIntro");  
             jQuery("#sonnyIntro").opacity = 0;
             sonnyImg.src = "./img/sonny/intro.gif";

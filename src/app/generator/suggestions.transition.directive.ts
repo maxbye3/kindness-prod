@@ -38,6 +38,7 @@ export class suggestionsTransition { // MAX CHECK THIS
     $(".skipContainer").attr('theme','summer'); 
     document.getElementById("doneView").className = "";  
     document.getElementById("doneView").className += " outro";
+    
     $('#doneView').fadeOut();
 
     document.getElementById("kindnessView").className = "";  

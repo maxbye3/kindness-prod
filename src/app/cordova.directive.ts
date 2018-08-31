@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 import {checkDayDirective} from './data/checkDay.directive';
-import { ThemeComponent } from './theme.component';
+import { ThemeComponent } from './settings/theme/theme.component';
 declare var jQuery: any;
 
 @Directive({

@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { calanderOutroTransition } from './outro.transition.directive';
 declare var jQuery: any;
 import { KindnessService } from '../kindness.service';
-import { ThemeComponent } from '../theme.component';
-import { SonnyDialogue } from '../sonny.dialogue.component';
-import { PretentiousComponent } from '../pretentious.component';
 
 @Component({
   selector: 'cal-view',

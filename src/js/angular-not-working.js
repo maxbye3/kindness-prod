@@ -135,21 +135,21 @@
         
 
 
-        if(shared == 'analytics("facebook_share")' || shared == 'analytics("twitter_share")' ){
-          calSpeech(["Thanks for the share!!","Appreciate it!!"]);
-        }
-        else{
+        // if(shared == 'analytics("facebook_share")' || shared == 'analytics("twitter_share")' ){
+        //   calSpeech(["Thanks for the share!!","Appreciate it!!"]);
+        // }
+        // else{
 
-          // if coming back from social
-          if(jQuery(".calyDiv").attr("social") == "true"){
-            calSpeech(["I don't like sharing either..."]);
-            jQuery(".calyDiv").attr("social","false");
-          }
-          else{
-            calSpeech(["Changed your mind?","I won't judge..."]);
-          }          
-          jQuery('#sonnyGif').attr('onclick','');
-        }
+        //   // if coming back from social
+        //   if(jQuery(".calyDiv").attr("social") == "true"){
+        //     calSpeech(["I don't like sharing either..."]);
+        //     jQuery(".calyDiv").attr("social","false");
+        //   }
+        //   else{
+        //     calSpeech(["Changed your mind?","I won't judge..."]);
+        //   }          
+        //   jQuery('#sonnyGif').attr('onclick','');
+        // }
 		    
         
         

@@ -3,7 +3,7 @@ import { SonnyDialogue } from '../sonny.dialogue.component';
 import { GeneratorBackend } from '../generator.component';
 import { PretentiousComponent } from '../pretentious.component';
 import { BadBroDialogue } from '../badBroDialogue.directive';
-import { ThemeComponent } from '../theme.component';
+import { ThemeComponent } from '../settings/theme/theme.component';
 import { inputNameEmail } from '../inputNameEmail.component';
 import { SwiperComponent } from '../generator/swiper.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';

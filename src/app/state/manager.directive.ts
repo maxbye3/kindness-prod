@@ -1,22 +1,24 @@
 import { Directive } from '@angular/core';
-import { GeneratorBackend } from '../generator.component';
-import { SwiperComponent } from '../generator/swiper.component';
 declare var jQuery: any;
 
 @Directive({})
 
-export class ManagerDirective {
+export class stateManager {
 
-  constructor(
-    private swiperComponent : SwiperComponent,
-    private generatorBackend : GeneratorBackend
-    ) {}
+  constructor() {}
 
     /*
     * INT STATE
     */
-    intState(){
-      console.log('state manager');
+    checkState(){
+      var classname;
+      if(jQuery('#kindnessView').css('display') == 'none'){
+        return classname = 'doneView';
+      }
+      else if(jQuery('#doneView').css('display') == 'none'){
+        return  classname = 'kindnessView';
+      }
+      
     }
 
 }

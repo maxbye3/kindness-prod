@@ -1,11 +1,12 @@
 import {Directive, ElementRef} from '@angular/core';
-import {PretentiousComponent} from './pretentious.component';
-import {SonnyComponent} from './sonny.component';
-import {SonnyDialogue} from './sonny.dialogue.component';
-import {ChallengeComponent} from './challenge.component';
-import {BoatComponent} from './settings/theme/boat.component';
-import {checkDayDirective} from './data/checkDay.directive';
-import { GeneratorBackend } from './generator.component';
+import {PretentiousComponent} from '../../pretentious.component';
+import {SonnyComponent} from '../../sonny.component';
+import {SonnyDialogue} from '../../sonny.dialogue.component';
+import {ChallengeComponent} from '../../challenge.component';
+import {BoatComponent} from './boat.component';
+import {checkDayDirective} from '../../data/checkDay.directive';
+import { GeneratorBackend } from '../../generator.component';
+import { stateManager } from '../../state/manager.directive';
 declare var jQuery: any;
 
 @Directive({
@@ -26,7 +27,8 @@ export class ThemeComponent {
       private sonnyDialogue : SonnyDialogue,
       private checkDayDirective : checkDayDirective,
       private challengeComponent : ChallengeComponent,
-      private boatComponent : BoatComponent
+      private boatComponent : BoatComponent,
+      private stateManager : stateManager
     ) {}
     
    /*
@@ -35,11 +37,10 @@ export class ThemeComponent {
    */
     resetSonny(){
       
-      if(this.sonnyComponent.sonnyPresent == false){
-        // reset Bad Bro
-        jQuery(".sonnyContainer").attr("outroAllowed",'false');
-        this.pretentiousComponent.intBad('greet');
-        
+    if(this.sonnyComponent.sonnyPresent == false){
+      // reset Bad Bro
+      jQuery(".sonnyContainer").attr("outroAllowed",'false');
+      this.pretentiousComponent.intBad('greet');
      }
      else{
         // reset Sonny
@@ -163,27 +164,19 @@ export class ThemeComponent {
     * Go back to main screen
     */
     back(){
-      // show everything
+
+      console.log('we are in state:'); 
       jQuery('kindness-generator-component, #kindness-generator, #doneView').css('opacity','1');
-      setTimeout(() => { 
-        jQuery('kindness-generator-component, #kindness-generator, #doneView').css('opacity','1');
-        if(jQuery('.sliderComponent').css('display') === 'block'){
-          jQuery('#kindnessView').hide();
-        }
-      }, 500);
-      jQuery('kindness-generator-component').show();  
-      
+      jQuery('kindness-generator-component').show();
+          
       document.getElementById('themeChange').className = "";  
       document.getElementById('themeChange').className += " outro";
-
-      if(jQuery('#kindnessView').css('display') == 'none'){
-        var classname = 'doneView';
-      }
-      else if(jQuery('#doneView').css('display') == 'none'){
-          classname = 'kindnessView';
-      }
       
-      this.checkDayDirective.dayCheck(classname); 
+      // where are we
+      var state = this.stateManager.checkState();
+      
+      // what are we going back to
+      this.checkDayDirective.dayCheck(state); 
     }
 
     selectButton(theme){

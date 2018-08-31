@@ -16,7 +16,7 @@ import {SettingsComponent} from './settings.component';
 import { HelpComponent } from './generator/help.component'
 import { EditComponent } from './generator/edit.component'
 import {PretentiousComponent} from './pretentious.component';
-import {ThemeComponent} from './theme.component';
+import {ThemeComponent} from './settings/theme/theme.component';
 import {TourComponent } from './tour.component';
 import {IntroScreens} from './intro-screens.component';
 import {BoatComponent} from './settings/theme/boat.component';
@@ -35,7 +35,7 @@ import { calanderIntroTransition } from './calander/intro.transition.directive';
 import { calanderOutroTransition } from './calander/outro.transition.directive';
 import { suggestionsTransition } from './generator/suggestions.transition.directive';
 import { finishedTransition } from './finishedKindness/finished.transition.directive';
-import { ManagerDirective } from './state/manager.directive';
+import { stateManager } from './state/manager.directive';
 
 
 
@@ -97,7 +97,7 @@ declare var jQuery: any;
     TourComponent, 
     CompassionFlow,
     EditComponent,
-    ManagerDirective,
+    stateManager,
     finishedTransition,
     calanderIntroTransition,
     suggestionsTransition,

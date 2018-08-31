@@ -185,7 +185,7 @@ export class ChallengeComponent implements OnInit{
     if($(".compassionDay").attr('firstCompassion') == 'true' || localStorage.getItem("compassionIteration") == "true"){ // compassion messages
       
      // Keep track on how far into compassion challenge people get 
-     $('#sonnyGif').attr('onclick', 'analytics("Compassion_Doing_' + num + '")').click(); 
+    //  $('#sonnyGif').attr('onclick', 'analytics("Compassion_Doing_' + num + '")').click(); 
      $(".compassionDay").attr('firstCompassion','false');
     //  console.log('Compassion not done');
      switch(parseInt(num)) {
@@ -223,14 +223,14 @@ export class ChallengeComponent implements OnInit{
        }
        
        // set compassion to do attr for analytics
-       $('#sonnyIcon').attr('analytics', 'compassion_done'+num);
+      //  $('#sonnyIcon').attr('analytics', 'compassion_done'+num);
     }
 
     else{  
         //,'Nice work spreading that positive karma!!' 'Looks like you\'re picking up a good rhythm!!',
         // Keep track on how far into compassion challenge people get 
-        var analytics = parseInt(num) - 1;
-        $('#sonnyGif').attr('onclick', 'analytics("Compassion_Complete_' + analytics + '")').click();        
+        // var analytics = parseInt(num) - 1;
+        // $('#sonnyGif').attr('onclick', 'analytics("Compassion_Complete_' + analytics + '")').click();        
         console.log('Compassion done');
         switch(parseInt(num)) {        
         case 1:          

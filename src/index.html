@@ -49,19 +49,18 @@
 
   <script src="js/jquery-1.12.4.js"></script>
   <script src="js/swiper.js"></script> 
-  <script src="cordova.js"></script> 
-  <script src="js/SocialSharing.js"></script>
+  <script src="js/cordova.js"></script> 
+  <!-- <script src="js/SocialSharing.js"></script> -->
   <script src='js/socialMedia.js'></script>
   <script src="js/jquery-ui.js"></script>
   <script src='js/inobounce.js'></script>	
   <script src="js/angular-not-working.js"></script>
   <script src="js/settings-not-angular.js"></script>
   <script src="js/typed.js"></script>      
-  <script src="js/googleAnalytics.js"></script>
   <script src="js/notification.js"></script>
-  <script src="js/changeTheme.js"></script>
+  <!-- <script src="js/changeTheme.jcordova.addConstructor(SocialSharing.install)s"></script> -->
 
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script> -->
   <!-- <script src='js/firebase.js'></script> -->
   <script>
     // stops keyboard from floating up
@@ -70,18 +69,18 @@
       window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px. 
     });
   
-  $(document).ready(function () {  
-    var config = {
-      apiKey: "AIzaSyCm-Inv6AHZI2riGC6uliHxtCjTluL6ejg",
-      authDomain: "the-kindness-app.firebaseapp.com",
-      databaseURL: "https://the-kindness-app.firebaseio.com",
-      projectId: "the-kindness-app",
-      storageBucket: "",
-      messagingSenderId: "715785739746"
-    };
-    firebase.initializeApp(config);
+  // $(document).ready(function () {  
+  //   var config = {
+  //     apiKey: "AIzaSyCm-Inv6AHZI2riGC6uliHxtCjTluL6ejg",
+  //     authDomain: "the-kindness-app.firebaseapp.com",
+  //     databaseURL: "https://the-kindness-app.firebaseio.com",
+  //     projectId: "the-kindness-app",
+  //     storageBucket: "",
+  //     messagingSenderId: "715785739746"
+  //   };
+  //   firebase.initializeApp(config);
 
-  });
+  // });
   
   function writeUserData(email,name) {
     ;

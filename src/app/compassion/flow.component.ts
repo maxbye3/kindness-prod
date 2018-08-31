@@ -3,7 +3,7 @@ import { SonnyDialogue } from '../sonny.dialogue.component';
 import { GeneratorBackend } from '../generator.component';
 import { PretentiousComponent } from '../pretentious.component';
 import { BadBroDialogue } from '../badBroDialogue.directive';
-import { ThemeComponent } from '../theme.component';
+import { ThemeComponent } from '../settings/theme/theme.component';
 import { inputNameEmail } from '../inputNameEmail.component';
 import { SwiperComponent } from '../generator/swiper.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';
@@ -54,7 +54,7 @@ export class CompassionFlow {
       // var classname, fontSize;
       jQuery('#kindness-generator').attr('active','true');
       // set kindness-done to analytics
-      jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_generator")').click(); 
+      // jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_generator")').click(); 
     
       // edit box
       jQuery('.kindnessCal .menuItem').css('width','45vw');

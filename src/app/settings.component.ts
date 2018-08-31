@@ -4,7 +4,7 @@ import {SonnyDialogue} from './sonny.dialogue.component';
 import {ModalComponent} from './modal.component';
 import {PretentiousComponent} from './pretentious.component';
 import {SonnyHelp} from './help.component';
-import {ThemeComponent} from './theme.component';
+import {ThemeComponent} from './settings/theme/theme.component';
 import {ChallengeComponent} from './challenge.component';
 import { KindnessGenerator } from './generator/kindness-generator.component';
 import { GeneratorBackend } from './generator.component';

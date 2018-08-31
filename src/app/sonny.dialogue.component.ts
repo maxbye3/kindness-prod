@@ -131,7 +131,7 @@ export class SonnyDialogue {
             this.sonnyStays(10000);            
         }
         else if(jQuery('#doneView').css('display') != 'none'){ /* KINDNESS ALREADY COMPLETED */ 
-            jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_done")').click();    
+            // jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_done")').click();    
 
             jQuery(".sonnyContainer").attr("outroAllowed","true");
             
@@ -196,7 +196,7 @@ export class SonnyDialogue {
         else{ // bunch of things Sonny could say when doing (rather than done)
 
             // set kindness-done to analytics
-            jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_doing")")').click(); 
+            // jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_doing")")').click(); 
             jQuery(".sonnyContainer").attr("outroAllowed","true");
 
             var sonnySaying = parseInt(localStorage.getItem('sonnySaying'));           

@@ -4,7 +4,7 @@ import { SubmitKindnessComplete } from './submit-kindness.component';
 import { PretentiousComponent } from './pretentious.component';
 import { SonnyDialogue } from './sonny.dialogue.component';
 import { TourComponent } from './tour.component';
-import { ThemeComponent } from './theme.component';
+import { ThemeComponent } from './settings/theme/theme.component';
 import {checkDayDirective} from './data/checkDay.directive';
 
 declare var jQuery: any;
