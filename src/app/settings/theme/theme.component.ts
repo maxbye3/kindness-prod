@@ -4,7 +4,7 @@ import {SonnyComponent} from '../../sonny.component';
 import {SonnyDialogue} from '../../sonny.dialogue.component';
 import {ChallengeComponent} from '../../challenge.component';
 import {BoatComponent} from './boat.component';
-import {checkDayDirective} from '../../data/checkDay.directive';
+import {checkDayDirective} from '../../state/checkDay.directive';
 import { GeneratorBackend } from '../../generator.component';
 import { stateManager } from '../../state/manager.directive';
 declare var jQuery: any;
@@ -51,26 +51,27 @@ export class ThemeComponent {
   
     
    setTheme(theme){
-      jQuery('kindness-generator-component').hide();
-      jQuery('#sonnyIcon').css("right","0px");  // slide sonnyIcon in
-      var introNecessary = localStorage.getItem("compassionChallenge"); // if undefined then do screens       
-      if(introNecessary != null){
-        if(theme == "pretentious"){
+    // 'set theme'
+    jQuery('kindness-generator-component').hide();
+    jQuery('#sonnyIcon').css("right","0px");  // slide sonnyIcon in
+    var introNecessary = localStorage.getItem("compassionChallenge"); // if undefined then do screens       
+    if(introNecessary != null){
+      if(theme == "pretentious"){
 
-          this.removeAllThemesBar(theme);
-          var is_iPad = navigator.userAgent.match(/iPad/i) != null;
-          if(is_iPad){
-            jQuery('.sonnyChar').css('top','60px');
-          }
-          this.pretentiousComponent.intScene(); 
-          jQuery('.birdContainer').show();         
+        this.removeAllThemesBar(theme);
+        var is_iPad = navigator.userAgent.match(/iPad/i) != null;
+        if(is_iPad){
+          jQuery('.sonnyChar').css('top','60px');
         }
-        else  {
-          this.seasonTheme(theme);
-          jQuery('.birdContainer').hide();
-        }
+        this.pretentiousComponent.intScene(); 
+        jQuery('.birdContainer').show();         
       }
-      this.generatorBackend.checkIntention(); // find if intention has been done     
+      else  {
+        this.seasonTheme(theme);
+        jQuery('.birdContainer').hide();
+      }
+    }
+    this.generatorBackend.checkIntention(); // find if intention has been done     
    }
    
     /*
@@ -156,7 +157,8 @@ export class ThemeComponent {
     * Changing the theme
     */
     changeTheme() {                  
-      return this.theme;
+      // return this.theme;
+      this.stateManager.theme = this.theme;
     }
     
     /*
@@ -165,16 +167,21 @@ export class ThemeComponent {
     */
     back(){
 
-      console.log('we are in state:'); 
       jQuery('kindness-generator-component, #kindness-generator, #doneView').css('opacity','1');
-      jQuery('kindness-generator-component').show();
+      // jQuery('kindness-generator-component').show();
           
       document.getElementById('themeChange').className = "";  
       document.getElementById('themeChange').className += " outro";
       
       // where are we
-      var state = this.stateManager.checkState();
+      console.log('THEME COMPONENT we are going back to is:');
+      console.log(this.stateManager.theme);
       
+      // what are we
+      var state = this.stateManager.checkIfComplete();
+      console.log('THEME COMPONENT state we going back to is:')
+      console.log(state);
+
       // what are we going back to
       this.checkDayDirective.dayCheck(state); 
     }

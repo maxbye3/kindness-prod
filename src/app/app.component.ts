@@ -10,7 +10,7 @@ import {WeatherComponent } from './settings/theme/weather.component'
 import {KindnessService} from './kindness.service';
 import { LetterComponent } from './letter.component';
 import {TimeService} from './time.service';
-import {checkDayDirective} from './data/checkDay.directive';
+import {checkDayDirective} from './state/checkDay.directive';
 import {inputNameEmail} from './inputNameEmail.component';
 import {SettingsComponent} from './settings.component';
 import { HelpComponent } from './generator/help.component'
@@ -34,7 +34,8 @@ import { themeTransition } from './settings/theme/theme.transition.directive';
 import { calanderIntroTransition } from './calander/intro.transition.directive';
 import { calanderOutroTransition } from './calander/outro.transition.directive';
 import { suggestionsTransition } from './generator/suggestions.transition.directive';
-import { finishedTransition } from './finishedKindness/finished.transition.directive';
+import { finishedTransition } from './state/states/finished.transition.directive';
+import { notFinishedTransition } from './state/states/notFinished.transition.directive';
 import { stateManager } from './state/manager.directive';
 
 
@@ -62,8 +63,8 @@ declare var jQuery: any;
     CalComponent,
     calanderOutroTransition,
     GeneratorBackend,    
-    // AlternativeKindness,
-    WeatherComponent,
+    settingsTransition,
+    WeatherComponent
   ],
   providers: [
     HelpComponent,
@@ -77,7 +78,7 @@ declare var jQuery: any;
     SwiperComponent,
     inputNameEmail,
     BadBroDialogue,
-    KindnessGenerator,
+    suggestionsTransition,
     SettingsComponent,
     ChallengeComponent,
     TimeService,
@@ -94,11 +95,13 @@ declare var jQuery: any;
     CalComponent,
     calanderIntroTransition,
     calanderOutroTransition,
+    settingsTransition,
     TourComponent, 
     CompassionFlow,
     EditComponent,
     stateManager,
     finishedTransition,
+    notFinishedTransition,
     calanderIntroTransition,
     suggestionsTransition,
     checkDayDirective
@@ -127,8 +130,9 @@ export class AppComponent  implements OnInit{
       private tourComponent : TourComponent,
       private IntroScreens : IntroScreens,
       private submitKindnessComplete : SubmitKindnessComplete,
-      private kindnessGenerator : KindnessGenerator,
+      private suggestionsTransition : suggestionsTransition,
       private sonnyDialogue : SonnyDialogue,
+      private settingsTransition : settingsTransition,
       private sendEmail :  SendEmail
       ) {
 
@@ -142,7 +146,7 @@ export class AppComponent  implements OnInit{
      this.IntroScreens.intIntro();
      this.IntroScreens.sonnyAnimations();     
      jQuery('.kindnessCal .menuItem').attr('goCal','true');
-     jQuery('#sonnyIcon').attr('settings','true');     
+     jQuery('#sonnyIcon').attr('settings','true');
     }
     
     /*
@@ -156,7 +160,7 @@ export class AppComponent  implements OnInit{
 
     goToIntention(){
       jQuery('.sonnyDialogue').attr('generatorMode','true'); 
-      this.kindnessGenerator.intGenerator()
+      this.suggestionsTransition.intSuggestions();
     }
 
     sonnyClick(){
@@ -175,7 +179,7 @@ export class AppComponent  implements OnInit{
         jQuery('.missionView').hide();
         jQuery('.classicView').hide();
        
-        this.kindnessGenerator.removeGenerator();
+        this.suggestionsTransition.removeSuggestions();
         
         
         if(jQuery('#sonnyStatic').attr('char') == 'sonny'){
@@ -184,13 +188,7 @@ export class AppComponent  implements OnInit{
         
         this.finishedTransition.intDone();
         
-        // change #sonnyIcon
-        jQuery('#sonnyIcon img').attr('src','./img/icons/more.png');
-        jQuery('#sonnyIcon img').css('margin-top','0px');
-        jQuery('#sonnyIcon p').html('more');
-      
-        // sonny icon when clicked goes to settings
-        jQuery('#sonnyIcon').attr('settings','true');
+        this.settingsTransition.intButton();
         
       }
     }

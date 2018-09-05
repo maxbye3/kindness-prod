@@ -25,7 +25,7 @@ export class calanderIntroTransition {
     * In calander mode then slide up to done
     */
     intCal(){
-      console.log('ENTER CALANDER');
+      // ENTER CALANDER
       // $('html, body').animate({scrollTop:0}, 'slow');
       $('.calView').fadeOut('fast');
 

@@ -100,10 +100,10 @@ export class HelpComponent {
           var currentKindness = jQuery('.swiper-slide-active').html();
           jQuery('.swiper-slide-active').attr('temp', currentKindness);
           if(jQuery('.sonnyDialogue').attr('generatorMode') == 'compassion'){
-            jQuery('.swiper-slide-active').html('Compassion exercises will appear here. Slide left or right with your finger or click \'scroll for next\' to see more.');
+            jQuery('.swiper-slide-active').html('Compassion exercises will appear here. Slide left or right with your finger or click \'scroll for next\' to see the next exercise.');
           }
           else{
-            jQuery('.swiper-slide-active').html('Kindness suggestions will appear here. Slide left or right with your finger or click \'scroll for next\' to see more.');
+            jQuery('.swiper-slide-active').html('Kindness suggestions will appear here. Slide left or right with your finger or click \'scroll for next\' to see the next suggestion.');
           }
        }   
        

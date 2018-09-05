@@ -14,7 +14,7 @@ function switchNow(ratio){
 
         $("#kindnessView #input").html('\
           <h1 id="kindnessText"> <img src="./img/icons/messenger.png" width="40px"> Kindness</h1>\
-          <input class="input" type="text" id="inputKindness" placeholder="What was today\'s kindness?" onclick="hideExtras()">\
+          <input class="input" type="text" id="inputKindness" placeholder="What was today\'s kindness?">\
           <h1 id="whoText"> <img src="./img/icons/heart.png" width="40px"> For Who</h1>\
           <input class="input" type="text" id="inputPerson" placeholder="Who did you do a kindness for?">\
         ');
@@ -35,7 +35,7 @@ function switchNow(ratio){
         <h1 id="whoText"> <img src="./img/icons/heart.png" width="40px"> For Who</h1>\
           <input class="input" type="text" id="inputPerson" placeholder="Who did you do a kindness for?">\
           <h1 id="kindnessText"> <img src="./img/icons/messenger.png" width="40px"> Kindness</h1>\
-          <input class="input" type="text" id="inputKindness" placeholder="What was today\'s kindness?" onclick="hideExtras()">\
+          <input class="input" type="text" id="inputKindness" placeholder="What was today\'s kindness?">\
         ');
 
         var inputKindness = document.getElementById("inputKindness").style;
@@ -43,10 +43,6 @@ function switchNow(ratio){
         inputStyle(inputKindness);
         inputStyle(inputPerson);
     }
-}
-
-function hideExtras(){
-  console.log('hello there');
 }
 
 /*

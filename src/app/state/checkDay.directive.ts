@@ -2,15 +2,17 @@ import {Directive, ElementRef} from '@angular/core';
 import { Injectable } from '@angular/core';
 import {ChallengeComponent} from '../challenge.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';
-import { finishedTransition } from '../finishedKindness/finished.transition.directive';
+import { finishedTransition } from './states/finished.transition.directive';
+import { notFinishedTransition } from './states/notFinished.transition.directive';
 import { calanderOutroTransition } from '../calander/outro.transition.directive';
 import { suggestionsTransition } from '../generator/suggestions.transition.directive';
+import { stateManager } from '../state/manager.directive';
 import {TimeService} from '../time.service';
 
 declare var $ : any;
 
 @Directive({        
-    providers: [finishedTransition, ChallengeComponent, AlternativeKindness]
+    providers: [finishedTransition, ChallengeComponent, AlternativeKindness, notFinishedTransition]
 })
 
 @Injectable()
@@ -21,7 +23,9 @@ export class checkDayDirective  {
         private finishedTransition : finishedTransition,
         private calanderOutroTransition : calanderOutroTransition,
         private suggestionsTransition : suggestionsTransition,
-        private timeService : TimeService
+        private timeService : TimeService,
+        private notFinishedTransition : notFinishedTransition,
+        private stateManager : stateManager
     ) {}
     
     
@@ -36,50 +40,40 @@ export class checkDayDirective  {
     * @param dayCheck - STRING - what view is currently present (kindnessView)
     */
     dayCheck(classname){
-
-        /*
-        * NOT SURE WHAT MEANS
-        * RESET MODE
-        * If left on either compassion or kindness generator then resume from there
-        * Disable the attr
-        * Don't do rest of time service
-        */
-        // function resetMode(mode){
-        //     if($('#' + mode).attr('active') == 'true'){
-        //         $('#' + mode).show();
-        //         return;
-        //     }
-        // }
-        // resetMode('kindness-generator');
-        // resetMode('compassion-flow');
-        // $('.goToCal,.orTxt, .intentionTask, .completeContainer').show();
-        /* not sure what means */
-
         this.calanderOutroTransition.exitCal();
         
-
         // update clock time to midnight
         $('.hoursLeft').html(24 - this.timeService.returnTime());
 
         /* CHECK IF LOADING SUGGESTIONS OR FINISHED VIEW */
         var dateArray = this.timeService.getDateArray();
         var matched = false;
-        console.log('we are exiting: ');
-        console.log(classname);
         for (var i = 0; i <= dateArray.length; i++) {          
-            if(dateArray[i] == this.timeService.formatDateNow() && !matched){
-              matched = true;
-              this.finishedTransition.intDone();
-              return;
-           }
-           else if(!matched){ // new day or regular day  
-              matched = true;  
+          if(dateArray[i] == this.timeService.formatDateNow() && !matched){
+            console.log('DONE VIEW');
+            matched = true;
+            this.finishedTransition.intDone();
+            return;
+          } else if(!matched){
+            console.log('KINDNESS NOT DONE');
+            matched = true;  
+            this.notFinishedTransition.intMakeKindness();
+            
+            this.stateManager.checkIfIntentionSet();
+            if(this.stateManager.intentionSet === false){          
               this.suggestionsTransition.intSuggestions();
+            }
+            else{  
+              this.stateManager.kindnessDone = false;       
+              console.log('max bye');
+              this.suggestionsTransition.removeSuggestions();
+            }
+            
 
-              // check if user has failed compassion challenge            
-              var today = this.timeService.returnDate(); // new Date();
-              var dd = today.getDate();
-              this.challengeComponent.checkFailure(dateArray, dd);                                                       
+            // check if user has failed compassion challenge            
+            var today = this.timeService.returnDate(); // new Date();
+            var dd = today.getDate();
+            this.challengeComponent.checkFailure(dateArray, dd);                                                       
           }             
         }
     }

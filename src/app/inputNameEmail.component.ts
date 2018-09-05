@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import { LetterComponent } from './letter.component';
-import { SonnyHelp } from './help.component';
+// import { SonnyHelp } from './help.component';
 import { SendEmail } from './sendEmail.directive';
 declare var jQuery: any;
 @Component({
   selector: 'name-email',
   templateUrl:'app/inputNameEmail.component.html',
   styleUrls: ['app/inputNameEmail.component.css'],
-  providers: [LetterComponent, SonnyHelp, SendEmail]
+  providers: [LetterComponent, SendEmail]
 })
 
 export class inputNameEmail {
 
   constructor(
-    private sonnyHelp : SonnyHelp,
+    // private sonnyHelp : SonnyHelp,
     private letterComponent : LetterComponent,
     private sendEmail :  SendEmail
   ) {}
@@ -87,7 +87,7 @@ export class inputNameEmail {
   * Hide kindness view
   */
   returnKindness(){
-    this.sonnyHelp.transitionViews('kindnessView','doneView');
+    // this.sonnyHelp.transitionViews('kindnessView','doneView'); MAX TO DO
     jQuery('#doneView').show();
        
   }
@@ -100,7 +100,7 @@ export class inputNameEmail {
   intName(){   
      
     jQuery('.returnBtn').html('skip reward');
-    this.sonnyHelp.transitionViews('doneView','kindnessView');
+    // this.sonnyHelp.transitionViews('doneView','kindnessView'); MAX TO DO
     jQuery('#kindnessView, .nameEmail, .nameInput, .inputName').show();
     jQuery('.missionView, #kindness,.inputEmail,.emailInput').hide();
   }  
@@ -134,7 +134,7 @@ export class inputNameEmail {
         return;
        }
        
-       this.sonnyHelp.transitionViews('kindnessView','doneView');
+      //  this.sonnyHelp.transitionViews('kindnessView','doneView'); MAX TO DO
        jQuery('#doneView').show();
        
        input = jQuery('.inputEmail').val();       

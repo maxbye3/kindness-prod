@@ -6,14 +6,14 @@ import {PretentiousComponent} from './pretentious.component';
 import {SonnyHelp} from './help.component';
 import {ThemeComponent} from './settings/theme/theme.component';
 import {ChallengeComponent} from './challenge.component';
-import { KindnessGenerator } from './generator/kindness-generator.component';
 import { GeneratorBackend } from './generator.component';
 import { SendEmail } from './sendEmail.directive';
 import { BadBroDialogue } from './badBroDialogue.directive';
 import { inputNameEmail } from './inputNameEmail.component';
 import { KindnessService } from './kindness.service';
 import { CompassionFlow } from './compassion/flow.component';
-import { finishedTransition } from './finishedKindness/finished.transition.directive';
+import { suggestionsTransition } from './generator/suggestions.transition.directive';
+import { finishedTransition } from './state/states/finished.transition.directive';
 import { AlternativeKindness } from './alternativeHome/alternateKindnessView.component';
 declare var jQuery: any;
 
@@ -21,7 +21,7 @@ declare var jQuery: any;
   selector: 'settings-component',
   templateUrl: 'app/settings.component.html',
   styleUrls: ['app/settings.component.css'],
-  providers: [ModalComponent, AlternativeKindness, CompassionFlow, KindnessService, inputNameEmail, BadBroDialogue, GeneratorBackend, KindnessGenerator, ChallengeComponent,SonnyDialogue,SonnyHelp,PretentiousComponent,ThemeComponent, SendEmail]
+  providers: [ModalComponent, AlternativeKindness, CompassionFlow, KindnessService, inputNameEmail, BadBroDialogue, GeneratorBackend, suggestionsTransition, ChallengeComponent,SonnyDialogue,SonnyHelp,PretentiousComponent,ThemeComponent, SendEmail]
 })
 
 @Injectable()
@@ -38,7 +38,7 @@ export class SettingsComponent implements OnInit{
       private sonnyDialogue : SonnyDialogue,
       private badBroDialogue : BadBroDialogue,
       private inputNameEmail : inputNameEmail,
-      private kindnessGenerator : KindnessGenerator,
+      private suggestionsTransition : suggestionsTransition,
       private sonnyHelp : SonnyHelp,
       private alternativeKindness : AlternativeKindness,
       private themeComponent : ThemeComponent,
@@ -187,7 +187,7 @@ export class SettingsComponent implements OnInit{
     goToIntention(){      
       this.back();
       jQuery('.sonnyDialogue').attr('generatorMode','true');
-      this.kindnessGenerator.intGenerator();
+      this.suggestionsTransition.intSuggestions();
     }
     /*
     * Cancel intention
@@ -201,7 +201,7 @@ export class SettingsComponent implements OnInit{
       
       // go to intention
       jQuery('#doneView').hide()
-      this.kindnessGenerator.intGenerator();
+      this.suggestionsTransition.intSuggestions();
       jQuery("#kindnessView").hide();
       
       this.back();   

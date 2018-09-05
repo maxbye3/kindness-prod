@@ -138,7 +138,7 @@
           </div>
           
           <!--if intention is false-->
-          <div class="itentionNotFound themeButton selected intention" (click)="kindnessGenerator.intGenerator()">
+          <div class="itentionNotFound themeButton selected intention" (click)="suggestionsTransition.intSuggestions()">
             set an intention
           </div>
         </div> 
@@ -246,7 +246,7 @@
 <img src="{{themeComponent.furnitureImg}}" class="furniture">
 
 <!-- Background -->
-<div class="theme" [ngClass]="themeComponent.changeTheme()">
+<div class="theme">
 
   <div class="sky bg"></div>
 

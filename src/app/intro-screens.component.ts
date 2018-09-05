@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {TourComponent } from './tour.component';
-import {KindnessGenerator} from './generator/kindness-generator.component'
+import { suggestionsTransition } from './generator/suggestions.transition.directive';
 import { Cordova } from './cordova.directive';
 import { ThemeComponent } from './settings/theme/theme.component';
 
@@ -11,7 +11,7 @@ declare var jQuery: any;
     selector: 'intro-screen-component',
     templateUrl: 'app/intro-screen-component.html',
     styleUrls: ['app/intro-screens.component.css'],
-    providers: [ ThemeComponent, TourComponent, Cordova, KindnessGenerator ]
+    providers: [ ThemeComponent, TourComponent, Cordova, suggestionsTransition ]
 })
 
 export class IntroScreens {
@@ -30,37 +30,11 @@ export class IntroScreens {
        private tourComponent : TourComponent,
        private cordova : Cordova,
        private themeComponent : ThemeComponent,
-       private kindnessGenerator : KindnessGenerator
+       private suggestionsTransition : suggestionsTransition
    ) {    
      this.introStep = 1; // set initial tour step      
    }
 
-  /*
-   * WHERE TO START
-   * Decides whether to start with main suggestion mode
-   * Or suggestion already selected 
-   */
-  _startWhere(){
-
-    
-    jQuery(".sonnyContainer").attr("present",'false');
-    // var customKindness = localStorage.getItem('cutomIntention');
-    // var intentionNum = parseInt(localStorage.getItem('intentionNum'));
-    // var intention = localStorage.getItem('intention');
-    // var isIntentionCustom = localStorage.getItem('isCustom');
-    if(jQuery('#kindnessView').attr('kindnessComplete') != 'true'){
-      var intention = localStorage.getItem('intention');
-      if(intention == 'true'){              
-        document.getElementById('kindnessView').className = "";  
-        document.getElementById('kindnessView').className += " intro";
-      }
-      else{ // go to suggestion mode
-        jQuery('#doneView').hide()
-        this.kindnessGenerator.intGenerator();
-        jQuery("#kindnessView").hide();
-      }
-    }
-  }
 
 
    /*
@@ -80,7 +54,7 @@ export class IntroScreens {
        }       
        jQuery(".introContainer").hide();  
        this.cordova.onResume();
-       this._startWhere();
+       console.log('maxbye3');
    }
    
    iosProb(){
@@ -91,7 +65,6 @@ export class IntroScreens {
    * Determines whether to launch intro screen or compassion screens
    */
    intIntro(){
-
 
      this.iosProb();
     
@@ -105,8 +78,7 @@ export class IntroScreens {
       }
       else{
          jQuery(".introContainer").hide(); 
-         this.cordova.onResume(); 
-         this._startWhere();         
+         this.cordova.onResume();
       }
    }
 

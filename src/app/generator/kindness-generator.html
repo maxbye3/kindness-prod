@@ -1,4 +1,4 @@
-<h2 class='customKindness'><a (click)="removeGenerator(); alternativeKindness.classicView()">(I don't need a suggestion)</a></h2>
+<h2 class='customKindness'><a (click)="suggestionsTransition.removeSuggestions(); alternativeKindness.classicView();">(I don't need a suggestion)</a></h2>
 <button id='launchBroraid' class='launchBroraid' style='display: none' (click)='generatorBackend.badBroOut()'></button>
 
 <div id='kindness-generator'>
@@ -28,7 +28,7 @@
     </div>
  
     <div class='kindnessContainer'>
-        <div class="stillNasty themeButton selected" (click)="removeGenerator()">
+        <div class="stillNasty themeButton selected" (click)="suggestionsTransition.removeSuggestions()">
               I'm still feeling nasty
         </div>
         <div class="backToKindness themeButton selected" (click)="tryKindness()">

@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import {checkDayDirective} from './data/checkDay.directive';
+import {checkDayDirective} from './state/checkDay.directive';
 import { ThemeComponent } from './settings/theme/theme.component';
 declare var jQuery: any;
 
@@ -21,8 +21,7 @@ export class Cordova {
         * RESET MODE
         * If left on either compassion or kindness generator then resume from there
         * Disable the attr
-        * Don't do rest of time service
-        
+        * Don't do rest of time service        
         */
         function resetMode(mode){
           if(jQuery('#' + mode).attr('active') == 'true'){
@@ -43,9 +42,8 @@ export class Cordova {
         
         var badBroInvisibile = jQuery('#sonnyStatic').attr('char') != 'badBro';
         if(badBroInvisibile){
-          if(resetMode('compassion-flow') || resetMode('kindness-generator')){
-            return;        
-          }
+          resetMode('compassion-flow');
+          resetMode('kindness-generator');
         }
 
         jQuery(".badBroDialogue").css('opacity','0').html('');
@@ -56,10 +54,10 @@ export class Cordova {
         else if(jQuery('#doneView').css('display') == 'none'){
             classname = 'kindnessView';
         }
-        
-        this.checkDayDirective.dayCheck(classname); 
         jQuery(".sonnyContainer").attr("introAllowed","true");
         this.themeComponent.setTheme('summer'); 
+        
+        this.checkDayDirective.dayCheck(classname); 
 
     } 
 }
