@@ -273,17 +273,17 @@ removeSuggestions(){
    }
    document.getElementById('kindness-generator').className = "";  
    document.getElementById('kindness-generator').className += " outro";
-   if(this.stateManager.kindnessDone == false){ 
+   if(this.stateManager.kindnessDone == true){ 
+     // bring in #doneView
+     $('#doneView').show();  
+     document.getElementById('doneView').className = "";  
+     document.getElementById('doneView').className += " intro";
+  }
+  else{
     // bring in #kindnessView
     $('#kindnessView').show();  
     document.getElementById('kindnessView').className = "";  
     document.getElementById('kindnessView').className += " intro";
-   }
-   else{
-    // bring in #doneView
-    $('#doneView').show();  
-    document.getElementById('doneView').className = "";  
-    document.getElementById('doneView').className += " intro";
    }
    
    // send sonny back
@@ -318,18 +318,14 @@ removeSuggestions(){
   $('.customKindness').fadeOut();
    
 
-   setTimeout(() => {        
-     // stop sonny from being idle
-     $('#sonnyStatic').attr('idle','false'); 
+    setTimeout(() => {        
+      // stop sonny from being idle
+      $('#sonnyStatic').attr('idle','false'); 
 
-     // hide scroll to go back - odd effect
-     $('.arrow, .helpMenu, .accept').hide();
-     $('.sliderComponent').hide();
+      // hide scroll to go back - odd effect
+      $('.arrow, .helpMenu, .accept').hide();
+      $('.sliderComponent').hide();
 
-   }, 500);        
-    
-}
-
-
-
+    }, 500);            
+  }
 }

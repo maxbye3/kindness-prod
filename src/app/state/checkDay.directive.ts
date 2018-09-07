@@ -50,12 +50,12 @@ export class checkDayDirective  {
         var matched = false;
         for (var i = 0; i <= dateArray.length; i++) {          
           if(dateArray[i] == this.timeService.formatDateNow() && !matched){
-            console.log('DONE VIEW');
+            // DONE VIEW'
             matched = true;
             this.finishedTransition.intDone();
             return;
           } else if(!matched){
-            console.log('KINDNESS NOT DONE');
+            // KINDNESS NOT DONE
             matched = true;  
             this.notFinishedTransition.intMakeKindness();
             
@@ -65,7 +65,6 @@ export class checkDayDirective  {
             }
             else{  
               this.stateManager.kindnessDone = false;       
-              console.log('max bye');
               this.suggestionsTransition.removeSuggestions();
             }
             

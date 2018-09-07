@@ -16,7 +16,6 @@ export class themeTransition {
     * INT STATE
     */
     intCustomKindness(){
-      console.log('custom kindness');
     }
 
 }

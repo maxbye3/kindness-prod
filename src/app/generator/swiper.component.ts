@@ -24,7 +24,6 @@ export class SwiperComponent {
 
     jQuery('.sliderComponent .swiper-wrapper').html('');
 
-    console.log('data length is ' + data.length);
     jQuery('.sliderComponent .swiper-wrapper').html('<div class="swiper-slide" slide="' + 0 + '">' + data[0] + '</div>');      
     for (var i = 1; i < this.generatorBackend.data.length; i++) {  
       if( !data[i] || data[i] < 40 ){
@@ -71,7 +70,6 @@ export class SwiperComponent {
       prevButton: '.prev',
       onTouchStart: function(slider) { 
         
-        console.log('initial slider: ' + slider.activeIndex); 
         if(slider.activeIndex == 1){
           jQuery('.sonnyDialogue').attr('resetSwiper', 'false'); 
         }
@@ -85,8 +83,6 @@ export class SwiperComponent {
       },
       onTransitionEnd: function(slider) { 
         
-        console.log('slider: ' + slider.activeIndex); 
-
         if(slider.activeIndex == 1){
           jQuery('.sonnyDialogue').attr('resetSwiper', 'false'); 
         }
@@ -110,7 +106,6 @@ export class SwiperComponent {
         else{
           jQuery('.prev').show();
         }
-        console.log('data.length: ' + data.length);
         if(slider.activeIndex == data.length - 1){
           jQuery('.next').hide();
         }
@@ -126,8 +121,6 @@ export class SwiperComponent {
 
         // var topPos = jQuery('.sliderComponent').position().top + jQuery('.sliderComponent h1').height() + jQuery('.swiper-slide-active').height();
         // jQuery('.customKindness').css('top', topPos);
-        // console.log(topPos);
-
 
         if(slider.activeIndex == 4){
           jQuery('.launchBroraid').click();

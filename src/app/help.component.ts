@@ -154,9 +154,6 @@ export class SonnyHelp implements OnInit {
     */
     giveExample(){    
         document.getElementById("typed").innerHTML = "okay.. let me think..";
-
-        // console.log("provide kidness example");
-
         this.transitionViews("helpView","kindnessView");
         
         // sony asks if this okay

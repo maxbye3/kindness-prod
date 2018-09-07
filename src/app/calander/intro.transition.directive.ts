@@ -78,14 +78,12 @@ export class calanderIntroTransition {
     case 2:
       $("#calyIdle").attr('idle','false');
       $("#calyIdle").css("opacity","0").hide();
-      //console.log("caly phone");
       document.getElementById("calyCall").style.display = "none";
       this.calComponent.calyState("return-phone");
     break;
     default:
       $('.calView .speechDiv').hide();
       $("#calyIdle").css("opacity","0").hide();
-      //console.log("caly gone");
       clearTimeout(this.calComponent.calyTimeout);
       document.getElementById("calType").innerHTML = ""; // remove text from bubble
       document.getElementById("calyGif").style.right = "-200px"; 

@@ -45,16 +45,14 @@ export class IntroScreens {
    * @param BOOL hasSkipped - mess with challenge
    */
    skipButton(hasSkip){
+    if(hasSkip){
+      // set compassion challenge to no
+      localStorage.setItem("compassionChallenge", "no"); 
+      jQuery('.weeklyCompassion').click(); // start notifications    
 
-       if(hasSkip){
-         // set compassion challenge to no
-         localStorage.setItem("compassionChallenge", "no"); 
-         jQuery('.weeklyCompassion').click(); // start notifications    
-
-       }       
-       jQuery(".introContainer").hide();  
-       this.cordova.onResume();
-       console.log('maxbye3');
+    }       
+    jQuery(".introContainer").hide();  
+    this.cordova.onResume();
    }
    
    iosProb(){
@@ -100,7 +98,6 @@ export class IntroScreens {
             sonnyImg.src = "./img/sonny/intro.gif";
             
             setTimeout(() => { 
-              //console.log("sonny's intro");
               jQuery("#sonnyIntro").opacity = 1;
               sonnyImg.src = "./img/sonny/intro.gif"; 
             
@@ -209,9 +206,6 @@ export class IntroScreens {
    }
 
    intro(){
-       
-    //console.log("intro step: "+this.introStep);
-   
     jQuery(".introContainer").show();        
     
     switch(this.introStep) {

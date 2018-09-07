@@ -84,9 +84,6 @@ private id;
         }
         
         // bug where sonny stops talking 
-
-        // console.log('state:' + state);
-
           if(state == 'talking'){
             if (this.id) {
               clearInterval(this.id);
@@ -284,7 +281,6 @@ private id;
       if(jQuery('#sonnyStatic').attr('idle') == 'false'){
         return;
       }
-      // console.log('sonny is idle: ' + t);   
       jQuery("#sonnyGif").attr('animating','true'); 
       if(t == 1)
         sonnyStatic.src = "./img/sonny/idle.gif?t=" + new Date().getTime(); 

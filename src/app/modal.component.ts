@@ -30,7 +30,6 @@ export class ModalComponent {
     }
 
     goBack(){
-      // console.log('goBack');
       jQuery('modal').hide();
 
       if(jQuery('.modalBox').attr('compassionState') == 'start'){
@@ -40,7 +39,6 @@ export class ModalComponent {
     }
     
   onwards(){
-    // console.log('onwards');
     jQuery('modal').hide();
 
     if(jQuery('.modalBox').attr('compassionState') == 'start'){

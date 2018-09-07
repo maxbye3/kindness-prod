@@ -369,7 +369,6 @@ export class CalComponent implements OnInit {
           <h6 class='saveChanges' onclick>save changes</h6>\
           </div>\
          ");
-        // console.log(actions[i]);
       }
       var resetAll = "<div class='square'>\
       <p class='resetTxt'>All data is private unless you choose to share</p>\
@@ -503,7 +502,6 @@ export class CalComponent implements OnInit {
           calyImg.src = "./img/caly/winning.gif?t=" + new Date().getTime();
         break;
         case "idle":
-          // console.log('idle');
           calyImg.src = "./img/caly/idle.gif?t=" + new Date().getTime();              
         break;
         case "extended-idle":
@@ -626,7 +624,7 @@ export class CalComponent implements OnInit {
                 // check if got phone animation
                 var imgSrc = <HTMLImageElement>document.getElementById("calyGif");
                   if(imgSrc.src.indexOf("phone") !== -1 || imgSrc.src.indexOf("Phone") !== -1){
-                  console.log("but there's a phone animation so do nothing")
+                  // but there's a phone animation so do nothing
                   }
                   //else ctx.calyState("chatOutro");
                 }

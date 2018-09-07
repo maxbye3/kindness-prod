@@ -25,8 +25,9 @@
 */
 	  
 	window.plugins.socialsharing.shareViaFacebook( msg , 'img/icons/heart.png' /* img */, 'http://thekindnessapp.com'  /* url */,
-	function() {console.log('share ok')},
-	function(errormsg){console.log('something went wrong: ' + errormsg)})
+	function(errormsg){
+    console.log('something went wrong: ' + errormsg);
+  })
 
   
 

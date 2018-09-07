@@ -11,7 +11,6 @@ export class settingsTransition {
   * When exiting a mode we need to change the settings button back into a button that iniates setting 
   */
   intButton(){
-    console.log('custom kindness');
     // change #sonnyIcon
     jQuery('#sonnyIcon img').attr('src','./img/icons/more.png');
     jQuery('#sonnyIcon img').css('margin-top','0px');

@@ -439,17 +439,13 @@ export class SonnyDialogue {
         setTimeout(() => {
             var checkIdle = setInterval(() => {  
                 var wordcountOld = jQuery('.sonnyDialogue #typed').html().length;
-                // console.log('word count old:' + wordcountOld);
                 setTimeout(() => {  
                 var wordcountNew = jQuery('.sonnyDialogue #typed').html().length;
-                // console.log('word count new:' + wordcountNew);
                 if(wordcountNew != wordcountOld){
-                    // console.log('going around');
                     return; // as different dialogue is now being spoken
                 }
                 else{
                     clearInterval(checkIdle);
-                    // console.log('success');
                     jQuery('.sonnyContainer').css('z-index','12');           
                     this.sonnyComponent.sonnyState('idle','sonny');
                 }
@@ -472,10 +468,8 @@ export class SonnyDialogue {
       }
       
       var wordcountOld = jQuery('.sonnyDialogue #typed').html().length; 
-      // console.log('word count old:' + wordcountOld);
       setTimeout(() => {  
         var wordcountNew = jQuery('.sonnyDialogue #typed').html().length;
-        // console.log('word count new:' + wordcountNew);
         if(wordcountNew != wordcountOld){
             return; // as different dialogue is now being spoken
         }

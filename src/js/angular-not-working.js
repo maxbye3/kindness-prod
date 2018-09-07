@@ -183,7 +183,6 @@
 	  }
 
 	  // restore text
-	  // console.log('item num: ' + itemNum);
 	  jQuery('.taskDetail'+ itemNum +' .kindness').css('width','auto').html('<span class="kindnessTxt">' + restoreTxt + '</span>');
 	  jQuery('.taskDetail'+ itemNum +' .editKindness').show();
 

@@ -50,7 +50,6 @@ export class KindnessGenerator {
    * @param - BOOL complain - whether to save or not 
    */
    accepted(save){
-      console.log('max bye');
 
       // save slide to local storage
       var slideNumber = jQuery('.sliderComponent').attr('currentSlide');

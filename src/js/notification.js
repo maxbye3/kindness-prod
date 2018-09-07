@@ -1,5 +1,5 @@
 function dayNotifications(){
-  console.log('daily: notification cancelled and started')
+  // 'daily: notification cancelled and started'
 
   cordova.plugins.notification.local.cancelAll(function() {
   }, this);
@@ -17,7 +17,7 @@ function dayNotifications(){
 
 
 function weekNotifications(){
-  console.log('weekly: notification cancelled and started')
+  // 'weekly: notification cancelled and started'
 
   cordova.plugins.notification.local.cancelAll(function() {
   }, this);

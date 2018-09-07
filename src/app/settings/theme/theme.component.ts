@@ -174,13 +174,11 @@ export class ThemeComponent {
       document.getElementById('themeChange').className += " outro";
       
       // where are we
-      console.log('THEME COMPONENT we are going back to is:');
-      console.log(this.stateManager.theme);
+      // 'THEME COMPONENT we are going back to is:' + this.stateManager.theme
       
       // what are we
       var state = this.stateManager.checkIfComplete();
-      console.log('THEME COMPONENT state we going back to is:')
-      console.log(state);
+      // 'THEME COMPONENT state we going back to is:' + state
 
       // what are we going back to
       this.checkDayDirective.dayCheck(state); 

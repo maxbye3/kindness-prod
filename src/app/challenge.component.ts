@@ -104,8 +104,7 @@ export class ChallengeComponent implements OnInit{
     checkCompassion(){
         
         var compassionNum = localStorage.getItem("compassionChallenge");
-        // console.log('check compassion: ');
-        // console.log(compassionNum);
+        // 'check compassion: ' + compassionNum
         if(compassionNum == null || compassionNum == "null" || compassionNum == "no"){
             $(".compassion-radio").removeClass("compassion-radio--clicked");
             return false;
@@ -187,7 +186,6 @@ export class ChallengeComponent implements OnInit{
      // Keep track on how far into compassion challenge people get 
     //  $('#sonnyGif').attr('onclick', 'analytics("Compassion_Doing_' + num + '")').click(); 
      $(".compassionDay").attr('firstCompassion','false');
-    //  console.log('Compassion not done');
      switch(parseInt(num)) {
         case 1:
           return ['Trying out the Compassion Challenge are we?','The challenge is to record 5 consecutive kindnesses!','This is Day 1. Good luck!'];
@@ -231,7 +229,6 @@ export class ChallengeComponent implements OnInit{
         // Keep track on how far into compassion challenge people get 
         // var analytics = parseInt(num) - 1;
         // $('#sonnyGif').attr('onclick', 'analytics("Compassion_Complete_' + analytics + '")').click();        
-        console.log('Compassion done');
         switch(parseInt(num)) {        
         case 1:          
           return ['Look\'s like you\'ve completed Day 1 of the compassion challenge!!','Hopefully, the first day of ten!!'];
