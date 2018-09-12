@@ -206,17 +206,16 @@
   
   function editData(itemNum){
   
-  // hide cal
-  if (/android/i.test(navigator.userAgent)){
-    $('.orTxt, .intentionTask, .completeContainer').hide();
-  }
+    // hide cal
+    if (/android/i.test(navigator.userAgent)){
+      // $('.orTxt, .intentionTask, .completeContainer').hide();
+      $('.intentionTask, .completeContainer').hide();
+    }
 
-  
-
-	// remove menus for all other items
-	setCal('default');
-    
-	// set view    
+    // remove menus for all other items
+    setCal('default');
+      
+    // set view    
     setCal('edit',itemNum);
     jQuery(".calyDiv").attr("speech","false");
     calSpeech(["Here you can edit and delete your tasks."]);
@@ -226,69 +225,78 @@
     byePhone();
   }
 
-  /*
-  * EDIT TEXT
-  * text is wrong and manually over-ridden
-  */
-  function editText(type,text,itemNum){
+  function editKindness(itemNum){
+  var type = 'kindness';
+  var text = jQuery('.taskDetail0 .kindnessTxt').text();
+  console.log(text);
 
-    // hide cal
-    if (/android/i.test(navigator.userAgent)){
-      $('.calyDiv, #calBubble').hide();
-    }
-
-    if(type=="date"){
-	
-      // hide date (edit)
-      jQuery('.taskDetail'+itemNum+' .editDate').hide();
-    
-      // over-written as wrong
-      text = jQuery('.taskDetail'+ itemNum +' .date').text();
-
-
-      jQuery(".calyDiv").attr("speech","false");
-      calSpeech(["Classic human.","You forget what day it was?"]);
-      var textInput = '<input class="'+type+'Edit datepicker" type="text" id="" value="'+text+'">';
-      setTimeout(() => { 
-          document.activeElement.blur(); 
-          $(".ui-datepicker-prev").html("Prev month");
-          $(".ui-datepicker-next").html("Next month")
-      }, 0);  
-    }
-    else{ // who and kind
+  // hide cal
+  if (/android/i.test(navigator.userAgent)){
+    $('.calyDiv, #calBubble').hide();
+  }
       
-      // get back quotation marks and such
-      // text = text.replace(/±/g,'/"').replace(/^/g,"/'");
-    
-      // hide kindness (edit)
-      jQuery('.taskDetail'+itemNum+' .editKindness').hide();
-    
-      jQuery(".calyDiv").attr("speech","false");
-      calSpeech(["Editing the truth?","Edit away...","Click the text in the box to get started!"]);
-      var textInput = '<input class="'+type+'Edit" type="text" value="' + text + '">';
-      // there's a bug here with ' and "
+  // hide kindness (edit)
+  jQuery('.taskDetail'+itemNum+' .editKindness').hide();
 
-       // put in text
-       $('#weekView .kindnessEdit').attr('value' , text);
+  jQuery(".calyDiv").attr("speech","false");
+  calSpeech(["Editing the truth?","Edit away...","Click the text in the box to get started!"]);
+  var textInput = '<input class="'+type+'Edit" type="text" value="' + text + '">';
+  // there's a bug here with ' and "
+
+    // put in text
+    $('#weekView .kindnessEdit').attr('value' , text);
+    
+    $(".taskDetail"+itemNum+" ."+type+"").html(textInput).css('width','100%');
+    
+    $(".taskDetail"+itemNum+" .saveChanges").show().html("Save Changes").attr("onclick",'saveData(\''+type+'\',\''+itemNum+'\')');
+    
+    $( ".datepicker" ).datepicker();
+  
+    $('.taskDetail'+ itemNum +' .'+type+'Edit').focus();
+
+    // sort out width of text box
+    var inputWidth = parseInt($('.square').width()) - 20;
+    $('#weekView .kindnessEdit').css('width' , inputWidth);
+
   }
 
+
+function editDate(itemNum){
+  var type = 'date';
+
+  // hide cal
+  if (/android/i.test(navigator.userAgent)){
+    $('.calyDiv, #calBubble').hide();
+  }
+
+  // hide date (edit)
+  jQuery('.taskDetail'+itemNum+' .editDate').hide();
+
+  // over-written as wrong
+  text = jQuery('.taskDetail'+ itemNum +' .date').text();
+
+  jQuery(".calyDiv").attr("speech","false");
+  calSpeech(["Classic human.","You forget what day it was?"]);
+  var textInput = '<input class="'+type+'Edit datepicker" type="text" id="" value="'+text+'">';
+  setTimeout(() => { 
+      document.activeElement.blur(); 
+      $(".ui-datepicker-prev").html("Prev month");
+      $(".ui-datepicker-next").html("Next month")
+  }, 0);  
+  
   $(".taskDetail"+itemNum+" ."+type+"").html(textInput).css('width','100%');
-  
+
   $(".taskDetail"+itemNum+" .saveChanges").show().html("Save Changes").attr("onclick",'saveData(\''+type+'\',\''+itemNum+'\')');
-  
+
   $( ".datepicker" ).datepicker();
- 
+
   $('.taskDetail'+ itemNum +' .'+type+'Edit').focus();
 
-  
   // sort out width of text box
   var inputWidth = parseInt($('.square').width()) - 20;
   $('#weekView .kindnessEdit').css('width' , inputWidth);
-  
- 
+}
 
-
-  }
 
   function saveData(type,itemNum){
     

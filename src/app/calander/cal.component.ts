@@ -364,8 +364,8 @@ export class CalComponent implements OnInit {
           <div class='editContainer dontEdit dontEdit" + i + "' onclick='setCal(\"default\",\"" + i + "\")'><img width='10px' src='./img/icons/back-arrow.png' style='filter:invert(100%)'><p>BACK</p></div>\
           </div>\
           <div class='more taskDetail taskDetail"+i+"'>\
-          <p class='kindness' onclick='editText(\"kindness\",\""+ editedKindness +"\","+i+")'><span class='kindnessTxt'>"+kindnessArray[i]+"&nbsp;</span></p><p class='edit editKindness' onclick='editText(\"kindness\",\""+ editedKindness +"\","+i+")'><a href>(edit kindness)</a></span></p><br>\
-          <p class='date' onclick='editText(\"date\",\""+dateArray[i]+"\","+i+")'>"+dateArray[i]+"&nbsp;</p><p class='edit editDate' onclick='editText(\"date\",\""+dateArray[i]+"\","+i+")'><a href>(edit date)</a></span></p><br>\
+          <p class='kindness' onclick='editKindness(" + i + ")'><span class='kindnessTxt'>"+kindnessArray[i]+"&nbsp;</span></p><p class='edit editKindness' onclick='editKindness(" + i + ")'><a href>(edit kindness)</a></span></p><br>\
+          <p class='date' onclick='editDate(" + i + ")'>"+dateArray[i]+"&nbsp;</p><p class='edit editDate' onclick='editDate(" + i + ")'><a href>(edit date)</a></span></p><br>\
           <h6 class='saveChanges' onclick>save changes</h6>\
           </div>\
          ");
@@ -385,7 +385,12 @@ export class CalComponent implements OnInit {
       
       var kindnesslist = '';
       for(var i = 0; i < taskComplete; i++){
-          
+          // MAX LINE 402 there's got to be a way to nullify href
+
+
+          console.log('maxbye3');
+          var kindnessTask = jQuery('.taskDetail'+ i + ' .kindnessTxt').text();
+          console.log(kindnessTask);
           var kindnessComplete = "\
           <div class='square task"+i+"'>\
           <h3>Kindness Number "+(taskComplete-i)+"</h3>\
@@ -398,8 +403,8 @@ export class CalComponent implements OnInit {
           <div onclick='setCal(\"default\",\" " + i + " \")' class='editContainer dontEdit dontEdit" + i + "'><p><img src='./img/icons/back-arrow.png' width='12px' style='filter: invert(100%)'>Back</p></div>\
           </div>\
           <div class='more taskDetail"+i+"'>\
-          <p class='kindness' >"+kindnessArray[i]+"&nbsp;</p><p class='edit editKindness' onclick='editText(\"kindness\",\""+kindnessArray[i]+"\","+i+")'><a href=''>(edit)</a></p>\
-          <p class='date'>"+dateArray[i]+"&nbsp;</p><p class='edit editDate' onclick='editText(\"date\",\""+dateArray[i]+"\","+i+")'><a href=''>(edit)</a></p>\
+          <p class='kindness' >"+kindnessArray[i]+"&nbsp;</p><p class='edit editKindness' onclick='editKindness(" + i + ")'><a href=''>(edit)</a></p>\
+          <p class='date'>"+dateArray[i]+"&nbsp;</p><p class='edit editDate' onclick='editDate(" + i + ")'><a href=''>(edit)</a></p>\
           <h6 class='saveChanges' onclick>save changes</h6>\
           </div>\
           ";

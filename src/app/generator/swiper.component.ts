@@ -1,5 +1,4 @@
 import {Component, ElementRef, Input } from '@angular/core';
-import { EditComponent } from '../generator/edit.component';
 import { Injectable } from '@angular/core';
 import { GeneratorBackend } from '../generator.component';
 declare var jQuery: any;
@@ -9,14 +8,13 @@ declare var Swiper: any;
   selector: 'swiper-component',
   templateUrl: 'app/generator/swiper.component.html',
   styleUrls: ['app/generator/swiper.component.css'],
-  providers: [ EditComponent ]
+  providers: []
 })
 
 @Injectable()
 export class SwiperComponent {
 
   constructor(
-    private editComponent : EditComponent,
     private generatorBackend : GeneratorBackend
   ) {}
 

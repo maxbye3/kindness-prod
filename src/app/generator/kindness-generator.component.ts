@@ -8,7 +8,6 @@ import { inputNameEmail } from '../inputNameEmail.component';
 import { SwiperComponent } from '../generator/swiper.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';
 import { HelpComponent } from '../generator/help.component'
-import { EditComponent } from '../generator/edit.component'
 import { finishedTransition } from '../state/states/finished.transition.directive';
 import { suggestionsTransition } from '../generator/suggestions.transition.directive';
 declare var jQuery: any;
@@ -34,8 +33,7 @@ export class KindnessGenerator {
    private badBroDialogue : BadBroDialogue,
    private themeComponent : ThemeComponent,
    private alternativeKindness: AlternativeKindness,
-   private helpComponent : HelpComponent,
-   private editComponent : EditComponent
+   private helpComponent : HelpComponent
    ) {    
   }
   

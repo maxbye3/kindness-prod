@@ -22,7 +22,8 @@ export class inputNameEmail {
   destroyOptions(){
     // hide options
     if (/android/i.test(navigator.userAgent)){
-      jQuery('.orTxt, .intentionTask, .completeContainer').hide();
+      // jQuery('.orTxt, .intentionTask, .completeContainer').hide();
+      jQuery('.intentionTask, .completeContainer').hide();
     }
   }
 

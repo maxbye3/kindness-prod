@@ -14,7 +14,6 @@ import {checkDayDirective} from './state/checkDay.directive';
 import {inputNameEmail} from './inputNameEmail.component';
 import {SettingsComponent} from './settings.component';
 import { HelpComponent } from './generator/help.component'
-import { EditComponent } from './generator/edit.component'
 import {PretentiousComponent} from './pretentious.component';
 import {ThemeComponent} from './settings/theme/theme.component';
 import {TourComponent } from './tour.component';
@@ -98,7 +97,6 @@ declare var jQuery: any;
     settingsTransition,
     TourComponent, 
     CompassionFlow,
-    EditComponent,
     stateManager,
     finishedTransition,
     notFinishedTransition,

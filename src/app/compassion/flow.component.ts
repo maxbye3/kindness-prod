@@ -8,7 +8,6 @@ import { inputNameEmail } from '../inputNameEmail.component';
 import { SwiperComponent } from '../generator/swiper.component';
 import { AlternativeKindness } from '../alternativeHome/alternateKindnessView.component';
 import { HelpComponent } from '../generator/help.component'
-import { EditComponent } from '../generator/edit.component'
 import { CompassionData } from './data.component';
 import { TimeService } from '../time.service';
 declare var jQuery: any;
@@ -34,8 +33,7 @@ export class CompassionFlow {
    private compassionData : CompassionData,
    private themeComponent : ThemeComponent,
    private alternativeKindness: AlternativeKindness,
-   private helpComponent : HelpComponent,
-   private editComponent : EditComponent
+   private helpComponent : HelpComponent
    ) {    
   }
   
@@ -56,7 +54,7 @@ export class CompassionFlow {
       // set kindness-done to analytics
       // jQuery('#sonnyGif').attr('onclick', 'analytics("kindness_generator")').click(); 
     
-      // edit box
+  
       jQuery('.kindnessCal .menuItem').css('width','45vw');
       
 
@@ -150,7 +148,6 @@ export class CompassionFlow {
   jQuery('.sliderComponent, .swiper-slide, .arrow, .helpMenu').show();
   jQuery('.swiper-container h1').html('Please choose a kindness that you can complete today: ');
   jQuery('.swiper-container h2').show();
-  jQuery('.editMenu .menuItem, .kindnessEdit').hide();
   
   
   // setTimeout(function(){     
@@ -163,7 +160,6 @@ export class CompassionFlow {
   //   jQuery('.sliderComponent, .swiper-slide, .arrow, .helpMenu').show();
   //   jQuery('.swiper-container h1').html('Please choose a kindness that you can complete today: ');
   //   jQuery('.swiper-container h2').show();
-  //   jQuery('.editMenu .menuItem, .kindnessEdit').hide();
   // }, 1000);
 
       if(navigator.userAgent.match(/iPad/i) != null){
@@ -174,7 +170,6 @@ export class CompassionFlow {
           jQuery('.swiper-slide, .arrow, .swiper-container h2, .helpMenu').hide();
           jQuery('.kindnessEdit').show().val("Loading...");
           jQuery('.swiper-container h1').html('One second');
-          // jQuery('.editMenu .menuItem').show();
           // jQuery('.kindnessEdit').attr('editKindness','true'); 
           ; 
         }, 500);
@@ -183,7 +178,6 @@ export class CompassionFlow {
           jQuery('.sliderComponent, .swiper-slide, .arrow, .helpMenu').show();
           jQuery('.swiper-container h1').html('Please choose a kindness that you can complete today: ');
           jQuery('.swiper-container h2').show();
-          jQuery('.editMenu .menuItem, .kindnessEdit').hide();
         }, 1000);
       }
     }
