@@ -225,10 +225,9 @@
     byePhone();
   }
 
-  function editKindness(itemNum){
+function editKindness(itemNum){
   var type = 'kindness';
   var text = jQuery('.taskDetail0 .kindnessTxt').text();
-  console.log(text);
 
   // hide cal
   if (/android/i.test(navigator.userAgent)){

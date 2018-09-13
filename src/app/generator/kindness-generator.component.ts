@@ -116,7 +116,7 @@ export class KindnessGenerator {
       jQuery('.kindnessCal .menuItem').attr('goCal','true');
       
       // go to kindness mode
-      jQuery('#kindnessView').show()         
+      jQuery('#kindnessView, .classicView').show()         
       document.getElementById('kindnessView').className = "";  
       document.getElementById('kindnessView').className += " intro";
 

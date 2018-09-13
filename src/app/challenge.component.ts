@@ -271,6 +271,8 @@ export class ChallengeComponent implements OnInit{
        }       
      }
    }
+
+   // MAX THERE'S AN ISSUE WITH COMPASSION CHALLENGE
    
    /*
    * START COMPASSION (CHALLENGE)
@@ -284,7 +286,6 @@ export class ChallengeComponent implements OnInit{
     $(".compassion-radio").toggleClass("compassion-radio--clicked");
     localStorage.setItem("compassionIteration",'true');
     localStorage.setItem("compassionChallenge","1");
-    
     this.intCompassion();
     $('.dailyCompassion').click(); // notifications
     $(".compassionDay").attr('firstCompassion','true');

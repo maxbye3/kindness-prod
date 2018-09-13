@@ -34,7 +34,7 @@ export class suggestionsTransition { // MAX CHECK THIS
 
   
    /*
-   * INT GENERATOR
+   * INT SUGGESTIONS
    * Edit existing #sonnyIcon and .kindnessCal
    * Determine what screen is going based on if day has been done or not
    * Set attr so above buttons work as expected
@@ -55,7 +55,7 @@ export class suggestionsTransition { // MAX CHECK THIS
   
   
     // Custom kindness button
-    $('.customKindness').hide(); 
+    $('.customKindness, #kindnessView').hide(); 
 
     // edit box
     // $('.kindnessCal img').attr('src','./img/icons/edit.png');

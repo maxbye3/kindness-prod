@@ -385,12 +385,7 @@ export class CalComponent implements OnInit {
       
       var kindnesslist = '';
       for(var i = 0; i < taskComplete; i++){
-          // MAX LINE 402 there's got to be a way to nullify href
-
-
-          console.log('maxbye3');
           var kindnessTask = jQuery('.taskDetail'+ i + ' .kindnessTxt').text();
-          console.log(kindnessTask);
           var kindnessComplete = "\
           <div class='square task"+i+"'>\
           <h3>Kindness Number "+(taskComplete-i)+"</h3>\
