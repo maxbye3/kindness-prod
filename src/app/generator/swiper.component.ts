@@ -19,11 +19,12 @@ export class SwiperComponent {
   ) {}
 
   populateData(data){
-
+    console.log('populate data:');
+    console.log(data);
     jQuery('.sliderComponent .swiper-wrapper').html('');
 
     jQuery('.sliderComponent .swiper-wrapper').html('<div class="swiper-slide" slide="' + 0 + '">' + data[0] + '</div>');      
-    for (var i = 1; i < this.generatorBackend.data.length; i++) {  
+    for (var i = 1; i < this.generatorBackend.kindnessData.length; i++) {  
       if( !data[i] || data[i] < 40 ){
         jQuery('.sliderComponent .swiper-wrapper').append('<div class="swiper-slide slide="' + i + '""> Tap to continue </div>');      
       }
@@ -33,7 +34,7 @@ export class SwiperComponent {
     }
     
     if(data.length < 20){
-      for (var i = 1; i < this.generatorBackend.data.length; i++) {  
+      for (var i = 1; i < this.generatorBackend.kindnessData.length; i++) {  
         jQuery('.sliderComponent .swiper-wrapper').append('<div class="swiper-slide slide="' + i + '""> Tap to continue </div>');      
       }
     }
@@ -83,7 +84,7 @@ export class SwiperComponent {
 
       },
       onTransitionEnd: function(slider) { 
-        
+
         if(slider.activeIndex == 1){
           jQuery('.sonnyDialogue').attr('resetSwiper', 'false'); 
         }
@@ -94,7 +95,6 @@ export class SwiperComponent {
         }
 
         if(jQuery('.sonnyDialogue').attr('generatorMode') == 'compassion'){
-          data.length = 4;
           if(slider.activeIndex > 3){
             slider.slideTo(0, 1000);
           }

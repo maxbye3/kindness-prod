@@ -76,8 +76,10 @@ export class suggestionsTransition { // MAX CHECK THIS
 
       // populate data
       // insert kindnessTxt into swiper
-      var data = this.generatorBackend.evilData;
-      this.swiperComponent.populateData(data);
+      var evilData = this.generatorBackend.evilData;
+      this.swiperComponent.populateData(evilData);
+      this.swiperComponent.enableSlider(evilData, 'evil');
+
       $('.sonnyDialogue').attr('resetSwiper', 'evil');  
       
       $('.editContainer p,.editContainer img').hide();
@@ -110,8 +112,11 @@ export class suggestionsTransition { // MAX CHECK THIS
       $('.swiper-container h2').css('color','#b6e5ed');
       // insert kindnessTxt into swiper
 
-      data = this.generatorBackend.data;
-      this.swiperComponent.populateData(data);
+      var kindnessData = this.generatorBackend.kindnessData;
+      console.log('max bye kindnessData');
+      console.log(kindnessData);
+      this.swiperComponent.populateData(kindnessData);
+      this.swiperComponent.enableSlider(kindnessData, 'kindness');
 
       // change fonts back
       $('.kindnessCal p').css('font-family','kindness');
@@ -125,8 +130,6 @@ export class suggestionsTransition { // MAX CHECK THIS
       this.sonnyDialogue.greeting();
     
     }    
-    
-   
  
    if($('#doneView').css('display') != 'none'){ // day is done
      // remove #doneView
@@ -171,12 +174,6 @@ export class suggestionsTransition { // MAX CHECK THIS
  
  // kindnessTxt vertical & horizontal positison on page
  this.swiperComponent.kindnessDimension();
- if($('#sonnyGif').attr('char') == 'badBro'){ 
-  this.swiperComponent.enableSlider(data, 'evil');
- }
- else{
-  this.swiperComponent.enableSlider(data, 'kindness');
- }
 
 // fix the height of swiper
 this.swiperComponent.kindnessContainerHeight(true);

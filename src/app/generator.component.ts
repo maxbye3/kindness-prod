@@ -121,7 +121,7 @@ export class GeneratorBackend {
   * @param INT intentionNumber - the intention number
   */
   suggestionsExceeded(intentionNumber){
-    if(intentionNumber > this.data.length){
+    if(intentionNumber > this.kindnessData.length){
       return 0;
     }
     else return intentionNumber;
@@ -158,7 +158,7 @@ export class GeneratorBackend {
                     return this.evilData[0];
                   }
                   else{
-                    return this.data[0];
+                    return this.kindnessData[0];
                   }
          } 
          intentionNum = intentionNum  - 1;         
@@ -177,7 +177,7 @@ export class GeneratorBackend {
         }        
       }
       else{
-        return this.data[intentionNum];
+        return this.kindnessData[intentionNum];
       }
   }
   
@@ -190,7 +190,7 @@ export class GeneratorBackend {
     [""]
   ];
   
-  public data = [
+  public kindnessData = [
 ["The Italian tradition of caffe sospeso or pending coffee. You pay for two cups, one for you and one in advance as an anonymous act of charity for someone who can't afford it."], // 1
 ["Catch up with an old friend who you have not heard from in a while"], //2
 ["Use <a href='https://soundcloud.com/compassionatemind/building-the-compassionate-self/s-c7EQJ?in=compassionatemind/sets/compassionate-minds' target='_blank'>this audio exercise</a> to help build a compassionate self"], //3
