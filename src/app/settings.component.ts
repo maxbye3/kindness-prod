@@ -122,7 +122,7 @@ export class SettingsComponent implements OnInit{
           }
           this.returnHome();      
           this.back();
-          this.finishedTransition.intDone();
+          // this.finishedTransition.intDone();
       //  }
     }/* int / remove narcissism */
     
@@ -159,12 +159,12 @@ export class SettingsComponent implements OnInit{
     * load compassion elements
     */
     intCompassion(){
+      this.back();
       var compassionNum = localStorage.getItem("compassionChallenge");        
       if(compassionNum == null || compassionNum == "null" || compassionNum == "no"){
         jQuery('.modalBox').attr('compassionState','start');
         this.challengeComponent.startCompassion(); 
         this.modalComponent.intModal('Compassion Challenge challenges you to record 5 kindnesses in 5 days', "Let's do it!", 'Maybe later', true);
-        this.back();
         // this.sonnyDialogue.greeting();
       }
       else{
@@ -175,8 +175,8 @@ export class SettingsComponent implements OnInit{
   
       }   
       // this.back(); 
-      this.sonnyDialogue.greeting();              
-      this.finishedTransition.intDone();
+      // this.sonnyDialogue.greeting();              
+      // this.finishedTransition.intDone();
     }
 
     /*

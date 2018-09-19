@@ -113,8 +113,6 @@ export class suggestionsTransition { // MAX CHECK THIS
       // insert kindnessTxt into swiper
 
       var kindnessData = this.generatorBackend.kindnessData;
-      console.log('max bye kindnessData');
-      console.log(kindnessData);
       this.swiperComponent.populateData(kindnessData);
       this.swiperComponent.enableSlider(kindnessData, 'kindness');
 
@@ -270,6 +268,7 @@ removeSuggestions(){
    }
    document.getElementById('kindness-generator').className = "";  
    document.getElementById('kindness-generator').className += " outro";
+   console.log(' MAX BYE VIEW');
    if(this.stateManager.kindnessDone == true){ 
      // bring in #doneView
      $('#doneView').show();  
@@ -281,6 +280,10 @@ removeSuggestions(){
     $('#kindnessView').show();  
     document.getElementById('kindnessView').className = "";  
     document.getElementById('kindnessView').className += " intro";
+    console.log('MISSIO VIEW');
+    if($('.missionView').css('display') != 'block'){
+      $('.missionView').show();
+    }
    }
    
    // send sonny back

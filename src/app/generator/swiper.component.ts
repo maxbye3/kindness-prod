@@ -19,8 +19,6 @@ export class SwiperComponent {
   ) {}
 
   populateData(data){
-    console.log('populate data:');
-    console.log(data);
     jQuery('.sliderComponent .swiper-wrapper').html('');
 
     jQuery('.sliderComponent .swiper-wrapper').html('<div class="swiper-slide" slide="' + 0 + '">' + data[0] + '</div>');      
@@ -44,10 +42,6 @@ export class SwiperComponent {
   }
   
   enableSlider(data,type){
-    console.log('SLIDER DATA:');
-    console.log(data);
-    console.log('SLIDER TYPE');
-    console.log(type);
     var slideNum = parseInt(localStorage.getItem('intentionNum'));
     if(type == 'compassion' ||  type == 'evil' || !slideNum){
       slideNum = 0;

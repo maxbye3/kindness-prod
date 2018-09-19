@@ -150,12 +150,6 @@ export class ChallengeComponent implements OnInit{
 
         
         $(".compassionDay").show();
-        /* CHANGE THE MARGIN 0F .compassionNum
-        * If .compassionNum == 1 then margin-left  = 14.5
-        * If .compassionNum == 10 then margin-left  = 5.5
-        * If .compassionNum == anything else then margin-left  = 11.5
-        */
-        
         if(compassionNum == '1'){
             $(".compassionNum").css('margin-left','7.5px');
         }
