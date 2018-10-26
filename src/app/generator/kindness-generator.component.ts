@@ -122,6 +122,10 @@ export class KindnessGenerator {
       document.getElementById('kindnessView').className = "";  
       document.getElementById('kindnessView').className += " intro";
 
+
+      // iterate kindnes number
+      // jQuery('.sliderComponent').attr('currentSlide');
+
    }
 
    /*
@@ -133,7 +137,6 @@ export class KindnessGenerator {
    * Setup .kindnessTxt and content
    */
    intGenerator(){ 
-
         var classname;
 
         this.alternativeKindness.changeSonny(); // change #sonnyIcon
@@ -157,7 +160,7 @@ export class KindnessGenerator {
         // jQuery('.kindnessCal .menuItem').css('width','10vw');
         // sonny is allowed to be idle
         jQuery('#sonnyStatic').attr('idle','true');        
-        jQuery('.swiper-container h1, .kindnessTxt').show();
+        jQuery('.sliderComponent, .swiper-container h1, .kindnessTxt').show();
 
         if(jQuery('#sonnyGif').attr('char') == 'badBro'){ 
 
@@ -274,24 +277,24 @@ export class KindnessGenerator {
     
     // this.generatorBackend.badBroOut();
     
-    // if(navigator.userAgent.match(/iPad/i) != null){
+    if(navigator.userAgent.match(/iPad/i) != null){
       
-      // setTimeout(function(){     
-      //   jQuery('.swiper-slide, .arrow, .swiper-container h2, .helpMenu').hide();
-      //   jQuery('.kindnessEdit').show().val("Loading...");
-      //   jQuery('.accept p').html('loading...');
-      //   jQuery('.swiper-container h1').html('One second');
-      //   ; 
-      // }, 1000);
+      setTimeout(function(){     
+        jQuery('.swiper-slide, .arrow, .swiper-container h2, .helpMenu').hide();
+        jQuery('.kindnessEdit').show().val("Loading...");
+        jQuery('.accept p').html('loading...');
+        jQuery('.swiper-container h1').html('One second');
+        ; 
+      }, 1000);
 
-      // setTimeout(function(){  
+      setTimeout(function(){  
         jQuery('.sliderComponent, .swiper-slide, .arrow, .helpMenu').show();
         jQuery('.accept p').html('accept');
         jQuery('.swiper-container h1').html('Please choose a kindness that you can complete today: ');
         jQuery('.swiper-container h2').show();
         jQuery('.editMenu .menuItem, .kindnessEdit').hide();
-      // }, 1500);
-
+      }, 1500);
+    }
       
     var userAgent = navigator.userAgent || navigator.vendor;
     // iOS detection from: http://stackoverflow.com/a/9039885/177710

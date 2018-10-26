@@ -104,7 +104,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
         nativeToJsMessageQueue.addBridgeMode(new NativeToJsMessageQueue.NoOpBridgeMode());
         nativeToJsMessageQueue.addBridgeMode(new NativeToJsMessageQueue.LoadUrlBridgeMode(engine, cordova));
 
-        if (preferences.getBoolean("DisallowOverscroll", false)) {
+        if (preferences.getBoolean("DisallowOverscroll", true)) {
             engine.getView().setOverScrollMode(View.OVER_SCROLL_NEVER);
         }
         engine.init(this, cordova, engineClient, resourceApi, pluginManager, nativeToJsMessageQueue);

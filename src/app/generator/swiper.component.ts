@@ -24,7 +24,7 @@ export class SwiperComponent {
 
     jQuery('.sliderComponent .swiper-wrapper').html('');
 
-    console.log('data length is ' + data.length);
+    // console.log('data length is ' + data.length);
     jQuery('.sliderComponent .swiper-wrapper').html('<div class="swiper-slide" slide="' + 0 + '">' + data[0] + '</div>');      
     for (var i = 1; i < this.generatorBackend.data.length; i++) {  
       if( !data[i] || data[i] < 40 ){
@@ -50,6 +50,9 @@ export class SwiperComponent {
     var slideNum = parseInt(localStorage.getItem('intentionNum'));
     if(type == 'compassion' ||  type == 'evil' || !slideNum){
       slideNum = 0;
+      var tempNum = 0;
+    } else {
+      tempNum = slideNum + 1;
     }
 
     if(type == 'compassion'){
@@ -67,11 +70,11 @@ export class SwiperComponent {
       direction: 'horizontal',
        // Navigation arrows
       nextButton: '.next',
-      initialSlide: slideNum,
+      initialSlide: slideNum + 1,
       prevButton: '.prev',
       onTouchStart: function(slider) { 
         
-        console.log('initial slider: ' + slider.activeIndex); 
+        // console.log('initial slider: ' + slider.activeIndex); 
         if(slider.activeIndex == 1){
           jQuery('.sonnyDialogue').attr('resetSwiper', 'false'); 
         }
@@ -85,7 +88,7 @@ export class SwiperComponent {
       },
       onTransitionEnd: function(slider) { 
         
-        console.log('slider: ' + slider.activeIndex); 
+        // console.log('slider: ' + slider.activeIndex); 
 
         if(slider.activeIndex == 1){
           jQuery('.sonnyDialogue').attr('resetSwiper', 'false'); 
@@ -110,7 +113,7 @@ export class SwiperComponent {
         else{
           jQuery('.prev').show();
         }
-        console.log('data.length: ' + data.length);
+        // console.log('data.length: ' + data.length);
         if(slider.activeIndex == data.length - 1){
           jQuery('.next').hide();
         }

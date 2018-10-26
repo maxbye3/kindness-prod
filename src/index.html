@@ -42,6 +42,9 @@
 </body>
 
   <script>
+
+
+
     System.import('system-config.js').then(function () {
       System.import('main');
     }).catch(console.error.bind(console));
@@ -64,6 +67,15 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
   <!-- <script src='js/firebase.js'></script> -->
   <script>
+
+    $('body').on('touchmove', function(evt) {
+      evt.preventDefault(); 
+    });
+
+    $(document).ready(function() {
+      document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
+    });
+
     // stops keyboard from floating up
     $('input').on('focus', function(e) {
       e.preventDefault(); e.stopPropagation();

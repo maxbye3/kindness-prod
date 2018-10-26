@@ -45,6 +45,15 @@
         [[self.commandDelegate.settings objectForKey:@"suppresses3dtouchgesture"] boolValue]) {
         self.lpgr.minimumPressDuration = 0.05f;
     }
+  
+  UIScrollView* scroll;  //
+  for(UIView* theWebSubView in self.webView.subviews){  // where self.webView is the webview you want to stop scrolling.
+    if([theWebSubView isKindOfClass:[UIScrollView class] ]){
+        scroll = (UIScrollView*) theWebSubView;
+        scroll.scrollEnabled = false;
+        scroll.bounces = false;
+    }
+}
 
     NSArray *views = self.webView.subviews;
     if (views.count == 0) {

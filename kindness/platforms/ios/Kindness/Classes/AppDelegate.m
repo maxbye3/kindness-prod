@@ -33,6 +33,7 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     self.viewController = [[MainViewController alloc] init];
+    self.viewController.webView.scrollView.scrollEnabled = false;
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
