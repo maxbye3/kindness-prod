@@ -99,8 +99,6 @@ var HelpComponent = (function () {
     HelpComponent.prototype.stopHelp = function () {
         jQuery('.helpMenu p').html('help');
         jQuery('.accept p').html('accept');
-        var imgHeight = jQuery('.accept').height();
-        jQuery('.accept p').html('<img width="' + imgHeight + 'px" src="./img/icons/return.svg"> help');
         // change back arrow style
         jQuery('.arrow').css({ 'font-weight': 'auto', 'color': 'black', 'top': '50%' });
         if (jQuery('#sonnyGif').attr('char') == 'badBro') {

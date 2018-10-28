@@ -40,6 +40,6 @@ function firebase(){
 function analytics(type){
     
     $('.GooglePageName').html(type);    
-    window.ga.trackView(type);
+    // window.ga.trackView(type);
     
 }

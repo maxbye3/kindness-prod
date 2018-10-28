@@ -68,7 +68,6 @@ var ThemeComponent = (function () {
     * Setup parameters for winter or summer
     */
     ThemeComponent.prototype.seasonTheme = function (theme) {
-        console.log(1);
         jQuery(".skipContainer").attr('theme', theme);
         // hide so nothing shown & set all generator parameters to false
         jQuery('kindness-generator-component, compassion-flow-component').hide();
@@ -145,10 +144,11 @@ var ThemeComponent = (function () {
         jQuery('kindness-generator-component, #kindness-generator, #doneView').css('opacity', '1');
         setTimeout(function () {
             jQuery('kindness-generator-component, #kindness-generator, #doneView').css('opacity', '1');
+            if (jQuery('.sliderComponent').css('display') === 'block') {
+                jQuery('#kindnessView').hide();
+            }
         }, 500);
-        // if(localStorage.getItem('intention') == 'false'){
         jQuery('kindness-generator-component').show();
-        // } 
         document.getElementById('themeChange').className = "";
         document.getElementById('themeChange').className += " outro";
         if (jQuery('#kindnessView').css('display') == 'none') {

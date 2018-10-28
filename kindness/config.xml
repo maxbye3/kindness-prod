@@ -18,7 +18,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <preference name="Orientation" value="portrait" />
-        <preference name="DisallowOverscroll" value="true" />
+        <preference name="DisallowOverscroll" value="false" />
         <preference name="UIWebViewBounce" value="false" />
         <preference name="fullscreen" value="false" />
     </platform>
