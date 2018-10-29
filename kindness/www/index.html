@@ -27,7 +27,7 @@
   
   <app-root>
     <div class='loading' style='font-weight: normal'>
-      4Loading...
+      5Loading...
     </div>    
   </app-root>
   
@@ -74,6 +74,11 @@
     // Disable scrolling.
   // Function to disable "pull-to-refresh" effect present in some webviews.
 // Especially Crosswalk 12 and above (Chromium 41+) runtimes.
+
+
+$('body').on('touchmove', function(evt) {
+             evt.preventDefault();
+             })
 
 window.addEventListener('load', function() {
     var lastTouchY = 0 ;

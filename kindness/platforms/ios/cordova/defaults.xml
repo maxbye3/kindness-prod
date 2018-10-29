@@ -56,5 +56,6 @@
         <param name="ios-package" value="CDVGestureHandler"/>
         <param name="onload" value="true"/>
     </feature>
-
+  <preference name="disallowoverscroll" value="true"/>
+  <preference name="UIWebViewBounce" value="false" />
 </widget>

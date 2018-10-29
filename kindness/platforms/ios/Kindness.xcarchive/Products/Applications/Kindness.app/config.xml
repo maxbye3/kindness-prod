@@ -79,4 +79,6 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+      <preference name="disallowoverscroll" value="true"/>
+  <preference name="UIWebViewBounce" value="false" />
 </widget>

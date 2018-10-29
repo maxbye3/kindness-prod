@@ -20,6 +20,16 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="css/stars.css">
   <link href="css/swiper.min.css" rel="stylesheet">
+  <style>
+	  html,
+	  body {
+	    position: fixed;
+	    overflow: hidden;
+		width: 100vw;
+		height: 100vh;
+	  }
+  </style>
+
 
 </head>
 <body>
@@ -27,7 +37,7 @@
   
   <app-root>
     <div class='loading' style='font-weight: normal'>
-      4Loading...
+      SDASDS...
     </div>    
   </app-root>
   
@@ -74,6 +84,16 @@
     // Disable scrolling.
   // Function to disable "pull-to-refresh" effect present in some webviews.
 // Especially Crosswalk 12 and above (Chromium 41+) runtimes.
+
+	  $('body').on('touchmove', function(evt) {
+	      evt.preventDefault(); 
+	  })
+	  
+	  
+	  window.addEventListener('touchmove', function(v) {
+	      evt.preventDefault(); 
+	  });
+	  
 
 window.addEventListener('load', function() {
     var lastTouchY = 0 ;
