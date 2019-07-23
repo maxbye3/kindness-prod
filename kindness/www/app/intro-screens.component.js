@@ -57,7 +57,6 @@ var IntroScreens = (function () {
         if (hasSkip) {
             // set compassion challenge to no
             localStorage.setItem("compassionChallenge", "no");
-            jQuery('.weeklyCompassion').click(); // start notifications    
         }
         jQuery(".introContainer").hide();
         this.cordova.onResume();

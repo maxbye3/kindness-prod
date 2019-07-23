@@ -10,13 +10,13 @@
           "UIStatusBarHidden": [
             {
               "xml": "<true />",
-              "count": 177
+              "count": 180
             }
           ],
           "UIViewControllerBasedStatusBarAppearance": [
             {
               "xml": "<false />",
-              "count": 177
+              "count": 180
             }
           ],
           "LSApplicationQueriesSchemes": [

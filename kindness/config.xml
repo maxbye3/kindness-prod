@@ -45,8 +45,8 @@
     <plugin name="cordova-plugin-email-composer" spec="git+https://github.com/katzer/cordova-plugin-email-composer.git" />
     <plugin name="cordova-custom-config" spec="^4.0.2" />
     <plugin name="ionic-plugin-keyboard" spec="git+https://github.com/driftyco/ionic-plugins-keyboard.git" />
-    <engine name="android" spec="^6.3.0" />
-    <engine name="ios" spec="^4.5.4" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <engine name="android" spec="^6.3.0" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>

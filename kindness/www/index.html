@@ -3,8 +3,8 @@
 <head>
    <!-- Facebook : OG Tags -->
   <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Your Website Title" />
+  <meta property="og:type"          content="app" />
+  <meta property="og:title"         content="The Kindness App" />
   <meta property="og:description"   content="Your description" />
   <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
   
@@ -21,13 +21,23 @@
   <link rel="stylesheet" href="css/stars.css">
   <link href="css/swiper.min.css" rel="stylesheet">
 
+  <style>
+	  html,
+	  body {
+	    position: fixed;
+	    overflow: hidden;
+		width: 100vw;
+		height: 100vh;
+	  }
+  </style>
+
 </head>
 <body>
   <img src="img/sonny/intro.gif" style='opacity: 0; position: absolute;'>
   
   <app-root>
     <div class='loading' style='font-weight: normal'>
-      5Loading...
+      Loading...
     </div>    
   </app-root>
   
@@ -41,9 +51,6 @@
 </body>
 
   <script>
-
-
-
     System.import('system-config.js').then(function () {
       System.import('main');
     }).catch(console.error.bind(console));
@@ -64,7 +71,6 @@
   <script src="js/changeTheme.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <!-- <script src='js/firebase.js'></script> -->
   <script>
 
     /* When this function is called, PhoneGap has been initialized and is ready to roll */
@@ -74,11 +80,6 @@
     // Disable scrolling.
   // Function to disable "pull-to-refresh" effect present in some webviews.
 // Especially Crosswalk 12 and above (Chromium 41+) runtimes.
-
-
-$('body').on('touchmove', function(evt) {
-             evt.preventDefault();
-             })
 
 window.addEventListener('load', function() {
     var lastTouchY = 0 ;
@@ -106,26 +107,10 @@ window.addEventListener('load', function() {
         lastTouchY = touchY ;
 
         if (maybePreventPullToRefresh) {
-            maybePreventPullToRefresh = false ;
-            //if (touchYDelta > 0) {
-                e.preventDefault() ;
-                //document.getElementById('txtLog').textContent = "TouchY: " + touchYDelta;
-                // console.log("pull-to-refresh event detected") ;
-                return ;
-            //}
+          maybePreventPullToRefresh = false ;
+          e.preventDefault() ;
+          return ;
         }
-
-        // if (preventScrollCheckbox.checked) {
-        //     e.preventDefault() ;
-        //     return ;
-        // }
-
-        // if (preventOverscrollGlowCheckbox.checked) {
-        //     if (window.pageYOffset == 0 && touchYDelta > 0) {
-        //         e.preventDefault() ;
-        //         return ;
-        //     }
-        // }
     };
 
     document.addEventListener('touchstart', touchstartHandler, false) ;
